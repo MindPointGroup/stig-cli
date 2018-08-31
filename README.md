@@ -145,16 +145,16 @@ DESCRIPTION
 
   Example output
   $ stig ls 0
-  ╔════╤═══════════════════════════════════════════════╤═════════╤═════════════════╤══════════╗
-  ║ ID │ Title                                         │ Vuln ID │ Rule ID         │ Severity ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 0  │ The A10 Networks ADC, when used for TLS       │ V-67957 │ SV-82447r1_rule │ medium   ║
-  ║    │ encryption anddecryption, must be configured  │         │                 │          ║
-  ║    │ to comply with the required TLSsettings in    │         │                 │          ║
-  ║    │ NIST SP 800-52.                               │         │                 │          ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 1  │ The A10 Networks ADC, when used to load       │ V-67959 │ SV-82449r1_rule │ low      ║
-  ║    │ balance webapplications, must enable external │         │                 │
+  ╔════╤═══════════════════════════════════════════════╤═════════╤═════════════════╤════════════════╤══════════╗
+  ║ ID │ Title                                         │ Vuln ID │ Rule ID         │ STIG ID        | Severity ║
+  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼────────────────┼──────────╢
+  ║ 0  │ The A10 Networks ADC, when used for TLS       │ V-67957 │ SV-82447r1_rule │ AADC-AG-000018 │ medium   ║
+  ║    │ encryption anddecryption, must be configured  │         │                 │                │          ║
+  ║    │ to comply with the required TLSsettings in    │         │                 │                │          ║
+  ║    │ NIST SP 800-52.                               │         │                 │                │          ║
+  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼────────────────┼──────────╢
+  ║ 1  │ The A10 Networks ADC, when used to load       │ V-67959 │ SV-82449r1_rule │ AADC-AG-000023 │ low      ║
+  ║    │ balance webapplications, must enable external │         │                 │                │          ║
 
 EXAMPLES
   stig ls
@@ -175,7 +175,7 @@ ARGUMENTS
   BENCHMARKID  The benchmark id of the rule(s) you want to get content for.
 
 OPTIONS
-  -r, --rule=rule  A valid STIG Identifier for the rule. It can be a Vulnerability or Rule ID. Multiple rules can be
+  -r, --rule=rule  A valid STIG Identifier for the rule. It can be a Vulnerability, Rule, or STIG ID. Multiple rules can be
                    specified
 
   --json           Return results in JSON format
@@ -197,16 +197,17 @@ DESCRIPTION
   Example
   $ stig ls 89
 
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ medium   ║
-  ║    │ servers isprohibited.                         │         │                 │          ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
+  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼─────────────────┼──────────╢
+  ║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ WG080 IIS7      │ medium   ║
+  ║    │ servers isprohibited.                         │         │                 │                 │          ║
+  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼─────────────────┼──────────╢
 
   Then to look at the text for this rule we have a few options
 
   Examples:
   $ stig read 89 -r V-2236
   $ stig read 89 -r SV-32632r4_rule
+  $ stig read 89 -r 'WG080 IIS7'
   $ stig read 89 -r 2
 
   You can pass in multiple '-r' flags to output multiple rules at once
@@ -218,6 +219,7 @@ DESCRIPTION
 EXAMPLES
   $ stig read 89 -r V-2236
   $ stig read 89 -r SV-32632r4_rule
+  $ stig read 89 -r 'WG080 IIS7'
   $ stig read 89 -r 2
   $ stig read 89
 ```

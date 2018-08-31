@@ -57,16 +57,17 @@ Then you want to get the rule ID
 Example
 $ stig ls 89
 
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ medium   ║
-║    │ servers isprohibited.                         │         │                 │          ║
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
+╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼─────────────────┼──────────╢
+║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ WG080 IIS7      │ medium   ║
+║    │ servers isprohibited.                         │         │                 │                 │          ║
+╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼─────────────────┼──────────╢
 
 Then to look at the text for this rule we have a few options
 
 Examples:
 $ stig read 89 -r V-2236
 $ stig read 89 -r SV-32632r4_rule
+$ stig read 89 -r 'WG080 IIS7'
 $ stig read 89 -r 2
 
 You can pass in multiple '-r' flags to output multiple rules at once
@@ -79,6 +80,7 @@ $ stig read 89
 ReadCommand.examples = [
   '$ stig read 89 -r V-2236',
   '$ stig read 89 -r SV-32632r4_rule',
+  '$ stig read 89 -r \'WG080 IIS7\'',
   '$ stig read 89 -r 2',
   '$ stig read 89'
 ]
@@ -94,7 +96,7 @@ ReadCommand.args = [
 ReadCommand.flags = {
   rule: flags.string({
     char: 'r',
-    description: 'A valid STIG Identifier for the rule. It can be a Vulnerability or Rule ID. Multiple rules can be specified',
+    description: 'A valid STIG Identifier for the rule. It can be a Vulnerability, Rule, or STIG ID. Multiple rules can be specified',
     multiple: true
   }),
   json: flags.boolean(json())

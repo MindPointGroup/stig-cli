@@ -24,7 +24,8 @@ module.exports.findInAll = async ({ rule }) => {
       const matches = (ruleObj) => {
         return rule.includes(String(ruleObj.index)) ||
           rule.includes(ruleObj.vulnId) ||
-          rule.includes(ruleObj.ruleId)
+          rule.includes(ruleObj.ruleId) ||
+          rule.includes(ruleObj.stigId)
       }
       rules = rules.concat(data.filter(matches))
     }
@@ -57,7 +58,8 @@ module.exports.findInBenchmark = async ({ benchmarkId, rule }) => {
       const matches = (ruleObj) => {
         return rule.includes(String(ruleObj.index)) ||
           rule.includes(ruleObj.vulnId) ||
-          rule.includes(ruleObj.ruleId)
+          rule.includes(ruleObj.ruleId) ||
+          rule.includes(ruleObj.stigId)
       }
       rules = data.filter(matches)
       if (rules.length === 0) {
@@ -90,6 +92,7 @@ module.exports.showResults = async ({ results }) => {
         benchmarkTitle,
         vulnId,
         ruleId,
+        stigId,
         fixText,
         desc,
         checkContent,
@@ -104,6 +107,7 @@ ${bWhite(wrap(title))}
 ${bWhite('SEVERITY:')} ${eval(severity)(severity.toUpperCase())} 
 ${bWhite('VULN ID:')} ${ids(vulnId)}
 ${bWhite('RULE ID:')} ${ids(ruleId)}
+${bWhite('STIG ID:')} ${ids(stigId)}
 
 ${bWhite('DESCRIPTION:')}
 ${wrap(desc)}

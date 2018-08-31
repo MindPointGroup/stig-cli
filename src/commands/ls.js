@@ -11,7 +11,7 @@ const { listRules, fillTableArr, fillRulesArr } = require('../utils/ls')
 const red = (s) => chalk.red(s)
 
 const lsRules = async ({ data, benchmarkId, cats, json }) => {
-  const rulesHeader = [[red('ID'), red('Title'), red('Vuln ID'), red('Rule ID'), red('Severity')]]
+  const rulesHeader = [[red('ID'), red('Title'), red('Vuln ID'), red('Rule ID'), red('STIG ID'), red('Severity')]]
   const tConfig = {
     columns: {
       1: { wrapWord: true, width: 45 }
@@ -98,16 +98,16 @@ And then if you want to list the rules inside of benchmarks supply an ID number
 
 Example output
 $ stig ls 0
-╔════╤═══════════════════════════════════════════════╤═════════╤═════════════════╤══════════╗
-║ ID │ Title                                         │ Vuln ID │ Rule ID         │ Severity ║
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-║ 0  │ The A10 Networks ADC, when used for TLS       │ V-67957 │ SV-82447r1_rule │ medium   ║
-║    │ encryption anddecryption, must be configured  │         │                 │          ║
-║    │ to comply with the required TLSsettings in    │         │                 │          ║
-║    │ NIST SP 800-52.                               │         │                 │          ║
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-║ 1  │ The A10 Networks ADC, when used to load       │ V-67959 │ SV-82449r1_rule │ low      ║
-║    │ balance webapplications, must enable external │         │                 │
+╔════╤═══════════════════════════════════════════════╤═════════╤═════════════════╤════════════════╤══════════╗
+║ ID │ Title                                         │ Vuln ID │ Rule ID         │ STIG ID        | Severity ║
+╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼────────────────┼──────────╢
+║ 0  │ The A10 Networks ADC, when used for TLS       │ V-67957 │ SV-82447r1_rule │ AADC-AG-000018 │ medium   ║
+║    │ encryption anddecryption, must be configured  │         │                 │                │          ║
+║    │ to comply with the required TLSsettings in    │         │                 │                │          ║
+║    │ NIST SP 800-52.                               │         │                 │                │          ║
+╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼────────────────┼──────────╢
+║ 1  │ The A10 Networks ADC, when used to load       │ V-67959 │ SV-82449r1_rule │ AADC-AG-000023 │ low      ║
+║    │ balance webapplications, must enable external │         │                 │                │          ║
 `
 
 LsCommand.examples = [

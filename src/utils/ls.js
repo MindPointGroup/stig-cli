@@ -21,8 +21,8 @@ module.exports.fillTableArr = async ({ data, array }) => {
 module.exports.fillRulesArr = async ({ data, array }) => {
   try {
     for (const [index, b] of data.entries()) {
-      const { title, vulnId, ruleId, severity } = b
-      array.push([index, title, vulnId, ruleId, severity])
+      const { title, vulnId, ruleId, stigId, severity } = b
+      array.push([index, title, vulnId, ruleId, stigId, severity])
     }
     return { data: array }
   } catch (err) {
@@ -81,8 +81,9 @@ module.exports.listRules = async ({ xmlPath }) => {
       const fixText = rule.fixtext['#text']
       const vulnId = r.$id
       const ruleId = rule.$id
+      const stigId = rule.version
       const severity = rule.$severity
-      rules.push({ index, benchmarkTitle, title, vulnId, ruleId, severity, fixText, desc, checkContent })
+      rules.push({ index, benchmarkTitle, title, vulnId, ruleId, stigId, severity, fixText, desc, checkContent })
     }
     return { data: rules }
   } catch (err) {
