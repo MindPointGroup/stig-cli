@@ -18,7 +18,7 @@ This CLI is simple, and while it's built with nodejs it **DOES NOT** require you
 
 Once you've installed it, updates are super simple with `stig update` and that is it. It will periodically attempt to update itself.
 
-This utility also does not require internet to work. All publicly avaialable benchmarks are bundled in with the source code so there is no need for outbound access for anything other than for updates.
+This utility also does not require internet to work. All publicly available benchmarks are bundled in with the source code so there is no need for outbound access for anything other than for updates.
 
 ## Table of Contents
 
