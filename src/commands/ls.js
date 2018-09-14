@@ -1,80 +1,51 @@
 const { Command, flags } = require('@oclif/command')
-const { cats } = require('../flags/cat')
 const { json } = require('../flags/format-output')
-const { table } = require('table')
-const JsonDB = require('node-json-db')
 const { join } = require('path')
-const bDB = new JsonDB(join(__dirname, '../../', 'data/benchmarks'), true, true)
-const chalk = require('chalk')
-const debug = require('debug')('ls')
-const { listRules, fillTableArr, fillRulesArr } = require('../utils/ls')
-const red = (s) => chalk.red(s)
+const { output } = require('../utils/output')
+const {
+  getBenchmarks,
+  getRules,
+} = require('../utils/query')
+const debug = require('debug')('command:ls')
 
-const lsRules = async ({ data, benchmarkId, cats, json }) => {
-  const rulesHeader = [[red('ID'), red('Title'), red('Vuln ID'), red('Rule ID'), red('Severity')]]
-  const tConfig = {
-    columns: {
-      1: { wrapWord: true, width: 45 }
-    }
-  }
-  const xmlPath = join(__dirname, '../../', data[benchmarkId].xmlPath)
-  debug(`Parsing ${xmlPath}`)
-  let { err: rulesErr, data: rulesData } = await listRules({ xmlPath })
-  if (rulesErr) {
-    throw rulesErr
-  }
-
-  if (cats.length < 3) {
-    const sevs = []
-    if (cats.includes('1')) sevs.push('high')
-    if (cats.includes('2')) sevs.push('medium')
-    if (cats.includes('3')) sevs.push('low')
-    rulesData = rulesData.filter(r => sevs.includes(r.severity))
-  }
-
-  if (json) {
-    debug('json flag detected')
-    console.log(JSON.stringify({ data: rulesData }))
-    return
-  }
-  const { err: fillErr, data: rulesTData } = await fillRulesArr({ data: rulesData, array: rulesHeader })
-  if (fillErr) {
-    throw fillErr
-  }
-  console.log(table(rulesTData, tConfig))
-  debug(cats)
-}
 
 class LsCommand extends Command {
   async run () {
-    let data
-    const tConfig = {
-      columns: {
-        1: { wrapWord: true, width: 55 }
-      }
-    }
+    const dataDir = this.config.dataDir
     const { flags, args } = this.parse(LsCommand)
     const { benchmarkId } = args
+    const type = benchmarkId ? 'rule' : 'benchmark'
     const { cats, json } = flags
+    let severities = cats
+    if (cats === 'all') {
+      severities = ['high', 'medium', 'low']
+    }
+    let data
+    let res
+    if (type === 'benchmark') {
+      res = await getBenchmarks(dataDir)
+      if (res.err) {
+        this.error(res.err.message)
+        this.exit(1)
+      }
+      data = res.data
+    } else {
+      const params = { dataDir, severities }
+      isNaN(benchmarkId)
+        ? params.benchmarkTitle = benchmarkId
+        : params.benchmarkIndex = Number(benchmarkId)
 
-    data = bDB.getData('data/benchmarks')
-    if (benchmarkId) {
-      await lsRules({ data, benchmarkId, cats, json })
-      return
+      res = await getRules(params)
+      if (res.err) {
+        this.error(res.err.message)
+        this.exit(1)
+      }
+      data = res.data
     }
 
-    if (flags.json) {
-      console.log(JSON.stringify({ data }))
-      return
-    }
-
-    const tData = [[red('ID'), red('Title'), red('Ver.'), red('Rel.'), red('Date')]]
-
-    const { err, data: tableArr } = await fillTableArr({ data, array: tData })
-    if (err) {
-      throw err
-    }
-    console.log(table(tableArr, tConfig))
+    console.log(
+      await output({ data, type, json })
+    )
     debug(flags, args)
   }
 }
@@ -125,7 +96,13 @@ LsCommand.args = [
 ]
 
 LsCommand.flags = {
-  cats: flags.integer(cats()),
+  cats: flags.string({
+    description: 'Rule categories to show from. If no arg is supplied, everything is listed',
+    multiple: true,
+    char: 'c',
+    options: ['high', 'medium', 'low', 'all'],
+    default: 'all'
+  }),
   json: flags.boolean(json())
 }
 

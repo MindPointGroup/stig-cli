@@ -2,11 +2,16 @@ const { Command } = require('@oclif/command')
 const { initDb } = require('../utils/db')
 const { cli } = require('cli-ux')
 const debug = require('debug')('command:init')
+const { existsSync, mkdirSync } = require('fs')
+
+const ensureDataDir = dir => existsSync(dir) ? '' : mkdirSync(dir)
 
 class InitCommand extends Command {
   async run () {
     debug('start init')
+    ensureDataDir(this.config.dataDir)
     cli.action.start('Initializing STIG Database, this can take up to a few minutes')
+    debug(this.config.dataDir)
     const { err } = await initDb(this.config.dataDir)
     if (err) {
       debug('error calling initDb')

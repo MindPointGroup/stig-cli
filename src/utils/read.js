@@ -1,78 +1,9 @@
-const { listRules, fillRulesArr } = require('./ls')
-const JsonDB = require('node-json-db')
 const { join } = require('path')
-const bDB = new JsonDB(join(__dirname, '../../', 'data/benchmarks'), true, true)
-const BENCHMARKS = bDB.getData('data/benchmarks')
 const debug = require('debug')('utils:read')
 const chalk = require('chalk')
 const assert = require('assert')
 const { stdout } = require('process')
 const wrap = require('wordwrap')(stdout.columns)
-
-module.exports.findInAll = async ({ rule }) => {
-  // TODO dry it up
-  let rules = []
-  try {
-    for await (const benchmark of BENCHMARKS) {
-      let { xmlPath } = benchmark
-      xmlPath = join(__dirname, '../../', xmlPath)
-      const { err, data } = await listRules({ xmlPath })
-      if (err) {
-        debug('err in listRules()')
-        throw err
-      }
-      const matches = (ruleObj) => {
-        return rule.includes(String(ruleObj.index)) ||
-          rule.includes(ruleObj.vulnId) ||
-          rule.includes(ruleObj.ruleId)
-      }
-      rules = rules.concat(data.filter(matches))
-    }
-
-    if (rules.length === 0) {
-      debug('ERROR, no rules found')
-      return { err: new Error('no rules found') }
-    }
-
-    return { data: rules }
-  } catch (err) {
-    debug('findAll err')
-    return { err }
-  }
-}
-
-module.exports.findInBenchmark = async ({ benchmarkId, rule }) => {
-  try {
-    let { xmlPath } = BENCHMARKS[benchmarkId]
-    xmlPath = join(__dirname, '../../', xmlPath)
-    debug(xmlPath)
-    const { err, data } = await listRules({ xmlPath })
-    if (err) {
-      debug('err in listRules()')
-      return { err }
-    }
-
-    let rules
-    if (rule) {
-      const matches = (ruleObj) => {
-        return rule.includes(String(ruleObj.index)) ||
-          rule.includes(ruleObj.vulnId) ||
-          rule.includes(ruleObj.ruleId)
-      }
-      rules = data.filter(matches)
-      if (rules.length === 0) {
-        debug('ERROR, no rules found')
-        return { err: new Error('no rules found') }
-      }
-    } else {
-      rules = data
-    }
-    return { data: rules }
-  } catch (err) {
-    debug('error')
-    return { err }
-  }
-}
 
 module.exports.showResults = async ({ results }) => {
   try {
@@ -97,7 +28,7 @@ module.exports.showResults = async ({ results }) => {
         title
       } = result
       assert(['high', 'medium', 'low'].includes(severity))
-      bTitle = benchmarkTitle
+      let bTitle = benchmarkTitle
       output += `
 ${bWhite(wrap(title))}
 

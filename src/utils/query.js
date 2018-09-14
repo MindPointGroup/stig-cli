@@ -7,6 +7,10 @@ const getBenchmarks = async (dataDir) => {
     if (errDb) {
       throw errDb
     }
+
+    if (!stigsDb) {
+      throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
+    }
     return { data: stigsDb.find({}) }
   } catch (err) {
     debug('error in getDb in query')
@@ -26,6 +30,9 @@ const getBenchmark = async ({ dataDir, title, index }) => {
     if (errDb) {
       throw errDb
     }
+    if (!stigsDb) {
+      throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
+    }
 
     if (title) {
       return { data: stigsDb.findOne({ title }) }
@@ -38,7 +45,7 @@ const getBenchmark = async ({ dataDir, title, index }) => {
   }
 }
 
-const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severity }) => {
+const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severities }) => {
   try {
     if (benchmarkTitle && benchmarkIndex) {
       throw new Error('benchmarkTitle and benchmarkIndex supplied to getRules(), only one is allowed')
@@ -47,6 +54,9 @@ const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severity }) =
     }
 
     const { err: errDb, rulesDb } = await getDb(dataDir)
+    if (!rulesDb) {
+      throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
+    }
     if (errDb) {
       throw errDb
     }
@@ -62,7 +72,7 @@ const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severity }) =
     const rParams = {
       stigIndex: $loki
     }
-    if (severity) rParams.severity = severity
+    if (severities) rParams.severity = { '$in': severities }
 
     return { data: rulesDb.find(rParams) }
   } catch (err) {
@@ -80,6 +90,9 @@ const getRule = async ({ dataDir, stigId, ruleId, stigIndex }) => {
     }
 
     const { err: errDb, rulesDb } = await getDb(dataDir)
+    if (!rulesDb) {
+      throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
+    }
     if (errDb) {
       throw errDb
     }
