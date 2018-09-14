@@ -2,6 +2,7 @@
 *-error.log
 /.nyc_output
 /dist
-/tmp
+
+/tmp/
 /yarn.lock
 node_modules
