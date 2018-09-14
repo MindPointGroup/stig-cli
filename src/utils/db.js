@@ -59,73 +59,77 @@ const getBmArr = async xmlDataArr => {
 
 const mkDb = ({ data, dataDir }) => {
   return new Promise(async (resolve, reject) => {
-    debug('start mkDb')
-    const dbPath = join(dataDir, 'database.db')
-    if (existsSync(dbPath)) {
-      unlinkSync(dbPath)
-    }
-    const db = new loki(dbPath)
-    const stigsDb = db.addCollection('stigs', {
-      unique: ['title'],
-      disableMeta: true
-    })
-    const rulesDb = db.addCollection('rules', {
-      indices: ['stigId', 'ruleId', 'stigIndex'],
-      disableMeta: true
-    })
-    for await (const benchmark of data) {
-      const {
-        title,
-        description,
-        release,
-        version,
-        date,
-        rules
-      } = benchmark
-
-      const stigEntry = stigsDb.insert({
-         title,
-         description,
-         release,
-         version,
-         date
-      })
-
-      const stigIndex = stigEntry.$loki
-
-      for await (const rule of rules) {
-        const {
-          err: errRule,
-          stigId,
-          ruleId,
-          severity,
-          title,
-          description,
-          fixText,
-          checkText
-        } = await getRuleData(rule)
-
-        if (errRule) {
-          debug('error in getting rule')
-          resolve({ err: errRule })
-        }
-
-        rulesDb.insert({
-          stigId,
-          ruleId,
-          severity,
-          title,
-          description,
-          fixText,
-          checkText,
-          stigIndex
-      })
+    try {
+      debug('start mkDb')
+      const dbPath = join(dataDir, 'database.db')
+      if (existsSync(dbPath)) {
+        unlinkSync(dbPath)
       }
+      const db = new loki(dbPath)
+      const stigsDb = db.addCollection('stigs', {
+        unique: ['title'],
+        disableMeta: true
+      })
+      const rulesDb = db.addCollection('rules', {
+        indices: ['stigId', 'ruleId', 'stigIndex'],
+        disableMeta: true
+      })
+      for await (const benchmark of data) {
+        const {
+          title,
+          description,
+          release,
+          version,
+          date,
+          rules
+        } = benchmark
+
+        const stigEntry = stigsDb.insert({
+           title,
+           description,
+           release,
+           version,
+           date
+        })
+
+        const stigIndex = stigEntry.$loki
+
+        for await (const rule of rules) {
+          const {
+            err: errRule,
+            stigId,
+            ruleId,
+            severity,
+            title,
+            description,
+            fixText,
+            checkText
+          } = await getRuleData(rule)
+
+          if (errRule) {
+            debug('error in getting rule')
+            resolve({ err: errRule })
+          }
+
+          rulesDb.insert({
+            stigId,
+            ruleId,
+            severity,
+            title,
+            description,
+            fixText,
+            checkText,
+            stigIndex
+          })
+        }
+      }
+      const x = db.saveDatabase(async () => {
+        debug('end mkDb')
+        resolve({ stigsDb, rulesDb })
+      })
+    } catch (err) {
+      resolve({ err })
     }
-    const x = db.saveDatabase(async () => {
-      debug('end mkDb')
-      resolve({ stigsDb, rulesDb })
-    })
   })
 }
 
@@ -178,6 +182,9 @@ const getDb = async (dataDir) => {
     ldb.loadDatabase({}, (res) => {
       const rulesDb = ldb.getCollection('rules')
       const stigsDb = ldb.getCollection('stigs')
+      if (!rulesDb || !stigsDb) {
+        throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
+      }
       resolve({ stigsDb, rulesDb })
     })
   })
