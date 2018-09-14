@@ -274,6 +274,29 @@ stig read 3 -r SV-9018r3_rule
 
 ![output of read -r 0 command](./static/read.png)
 
+
+# Uninstallation
+If you want to uninstall this there is not yet a built in uninstaller but the following should accomplish what you want. You should do this even if you install via `npm`.
+
+**On MacOS**
+
+```
+rm -rf ~/Library/Caches/stig
+rm -rf ~/.local/share/stig
+rm -rf ~/.data/stig
+sudo rm `which stig`
+```
+
+**On Linux**
+
+```
+rm -rf ~/.cache/stig
+rm -rf ~/.data/stig
+sudo rm `which stig`
+```
+
+**On Windows TBD pending testing**
+
 [macostar]: https://s3.amazonaws.com/stigcli/stig-darwin-x64.tar.gz
 [macospkg]: https://s3.amazonaws.com/stigcli/stig.pkg
 [linuxarm]: https://s3.amazonaws.com/stigcli/stig-linux-arm.tar.gz

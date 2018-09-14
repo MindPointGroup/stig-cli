@@ -26,12 +26,10 @@ const decodeToObj = async str => {
 module.exports.getRuleData = async rule => {
   let VulnDiscussion
   try {
-    debug('start getRuleData')
     const {
       '@_id': stigId,
       Rule
     } = rule
-    debug(`stigId ${stigId}`)
 
     const {
       '@_id': ruleId,
@@ -45,9 +43,6 @@ module.exports.getRuleData = async rule => {
     // not every rule has fix and check content
     const fixText = fixtext && fixtext['#text']
     const checkText = check && check['check-content']
-    if (!description) {
-      debug(Rule)
-    }
     const { data } = await decodeToObj(description)
     VulnDiscussion = data.VulnDiscussion
 
@@ -60,7 +55,6 @@ module.exports.getRuleData = async rule => {
         VulnDiscussion = `${VulnDiscussion['#text']}`
       }
     }
-    debug('end getRuleData')
     return {
       stigId,
       ruleId,
@@ -120,7 +114,6 @@ module.exports.getDataPaths = async () => {
 
 const sanitizeXml = async ({ xmlAsString }) => {
   try {
-    debug('santizeXml() start')
     const pTidy = promisify(tidy)
     const tidyOpts = {
       doctype: 'omit',
@@ -128,7 +121,6 @@ const sanitizeXml = async ({ xmlAsString }) => {
       'output-xml': true
     }
     const xmlData = await pTidy(xmlAsString, tidyOpts)
-    debug('santizeXml() end')
     return { xmlData }
   } catch (err) {
     return { err }

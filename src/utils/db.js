@@ -45,12 +45,12 @@ const getBmArr = async xmlDataArr => {
       }
 
       bmDataArr.push({
-          title,
-          description,
-          release,
-          version,
-          date,
-          rules
+        title: title.replace('STIG', '').replace(/sec.*tech.*impl.*de/gi, '').replace('()', '').trim(),
+        description,
+        release,
+        version,
+        date,
+        rules
       })
   }
   debug(`end getBmArr, data length of ${bmDataArr.length}`)
@@ -65,6 +65,7 @@ const mkDb = ({ data, dataDir }) => {
       if (existsSync(dbPath)) {
         unlinkSync(dbPath)
       }
+      debug(`Making db at ${dbPath}`)
       const db = new loki(dbPath)
       const stigsDb = db.addCollection('stigs', {
         unique: ['title'],
@@ -177,16 +178,20 @@ const initDb = async (dataDir) => {
 
 const getDb = async (dataDir) => {
   return new Promise((resolve, reject) => {
-    const dbPath = join(dataDir, 'database.db')
-    const ldb = new loki(dbPath)
-    ldb.loadDatabase({}, (res) => {
-      const rulesDb = ldb.getCollection('rules')
-      const stigsDb = ldb.getCollection('stigs')
-      if (!rulesDb || !stigsDb) {
-        throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
-      }
-      resolve({ stigsDb, rulesDb })
-    })
+    try {
+      const dbPath = join(dataDir, 'database.db')
+      const ldb = new loki(dbPath)
+      ldb.loadDatabase({}, (res) => {
+        const rulesDb = ldb.getCollection('rules')
+        const stigsDb = ldb.getCollection('stigs')
+        if (!rulesDb || !stigsDb) {
+          resolve({ err: new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details') })
+        }
+        resolve({ stigsDb, rulesDb })
+      })
+    } catch (err) {
+      resolve({ err })
+    }
   })
 }
 

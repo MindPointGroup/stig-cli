@@ -1,12 +1,15 @@
 const { test } = require('tape')
 const {
   getBenchmarks,
-  getBenchmark,
   getRules,
+  getBenchmark,
   getRule
 } = require('../src/utils/query')
 
+const { initDb } = require('../src/utils/db')
+
 test('Query', async t => {
+  await initDb('/tmp')
   t.test('get all benchmarks', async t => {
     const { err: errGB, data } = await getBenchmarks('/tmp/')
     if (errGB) {
@@ -21,7 +24,7 @@ test('Query', async t => {
     t.comment('get benchmark by title')
     const params = {
       dataDir: '/tmp/',
-      title: 'Microsoft OneNote 2013 STIG'
+      title: 'Microsoft OneNote 2013'
     }
     const { err, data } = await getBenchmark(params)
     if (err) {
@@ -41,7 +44,7 @@ test('Query', async t => {
   t.test('get all rules for a benchmark', async t => {
     const params = {
       dataDir: '/tmp',
-      benchmarkTitle: 'F5 BIG-IP Advanced Firewall Manager 11.x Security Technical Implementation Guide'
+      benchmarkTitle: 'F5 BIG-IP Advanced Firewall Manager 11.x'
     }
     t.comment('get rules by benchmark title')
     const { err, data } = await getRules(params)
@@ -70,7 +73,7 @@ test('Query', async t => {
       const params = {
         dataDir: '/tmp',
         benchmarkIndex: 22,
-        severity: 'high'
+        severities: ['high']
       }
       const { err, data } = await getRules(params)
       if (err) {
@@ -112,6 +115,13 @@ test('Query', async t => {
       t.ok(data, 'data received')
       t.ok(data.ruleId === params.ruleId)
     }
+    t.end()
+  })
+
+  t.test('query with uninitialized db', async t => {
+    const { err: errGB, data } = await getBenchmarks('/dev/null')
+    t.ok(!data, 'no data as desired')
+    t.ok(errGB, 'errored out with no db')
     t.end()
   })
 
