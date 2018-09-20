@@ -30,7 +30,6 @@
     "lokijs": "^1.5.5",
     "moment": "^2.22.2",
     "node-fetch": "^2.2.0",
-    "node-json-db": "^0.7.5",
     "table": "^4.0.3",
     "unzipper": "^0.9.3",
     "wordwrap": "^1.0.0"

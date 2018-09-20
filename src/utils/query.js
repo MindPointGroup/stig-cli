@@ -2,6 +2,7 @@ const { getDb } = require('./db')
 const debug = require('debug')('query')
 
 const getBenchmarks = async (dataDir) => {
+  debug('getBenchmarks()')
   try {
     const { err: errDb, stigsDb } = await getDb(dataDir)
     if (errDb) {
@@ -11,6 +12,7 @@ const getBenchmarks = async (dataDir) => {
     if (!stigsDb) {
       throw new Error('Database not found, you must call init via the CLI or API before querying. See `stig init --help` for more details')
     }
+    debug('end getBenchmarks()')
     return { data: stigsDb.find({}) }
   } catch (err) {
     debug('error in getDb in query')
@@ -19,6 +21,7 @@ const getBenchmarks = async (dataDir) => {
 }
 
 const getBenchmark = async ({ dataDir, title, index }) => {
+  debug('getBenchmark start')
   try {
     debug('benchmark index', index)
     if (title && index !== undefined) {
@@ -36,8 +39,10 @@ const getBenchmark = async ({ dataDir, title, index }) => {
     }
 
     if (title) {
+      debug('getBenchmark end')
       return { data: stigsDb.findOne({ title }) }
     } else {
+      debug('getBenchmark end')
       return { data: stigsDb.findOne({ '$loki': index }) }
     }
   } catch (err) {
@@ -48,7 +53,7 @@ const getBenchmark = async ({ dataDir, title, index }) => {
 }
 
 const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severities }) => {
-  debug('benchmarkIndex', benchmarkIndex)
+  debug('getRules()')
   try {
     if (benchmarkTitle && benchmarkIndex) {
       throw new Error('benchmarkTitle and benchmarkIndex supplied to getRules(), only one is allowed')
@@ -68,13 +73,15 @@ const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severities })
     const params = { dataDir }
     benchmarkTitle
       ? params.title = benchmarkTitle
-      : params.index = benchmarkIndex
+      : params.index = Number(benchmarkIndex)
 
     debug('params', params)
     const { data } = await getBenchmark(params)
     if (!data) {
       throw new Error(`No benchmark found at index ${benchmarkIndex}`)
     }
+    debug('benchmark', data)
+    debug('severities', severities)
 
     const { $loki } = data
     const rParams = {
@@ -83,6 +90,7 @@ const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severities })
 
     if (severities) rParams.severity = { '$in': severities }
 
+    debug('end getRules()')
     return { data: rulesDb.find(rParams) }
   } catch (err) {
     debug('error in getRules in query')
@@ -92,6 +100,7 @@ const getRules = async ({ dataDir, benchmarkTitle, benchmarkIndex, severities })
 }
 
 const getRule = async ({ dataDir, stigId, ruleId, stigIndex }) => {
+  debug('getRule()')
   try {
     if (stigId && ruleId) {
       throw new Error('ruleId and stigId supplied to getRule(), only one is allowed')
@@ -112,6 +121,7 @@ const getRule = async ({ dataDir, stigId, ruleId, stigIndex }) => {
     if (stigIndex) query.stigIndex = stigIndex
     debug('query', query)
     const data = rulesDb.findOne(query)
+    debug('end getRule()')
     return { data }
   } catch (err) {
     debug('error in getRule in query')

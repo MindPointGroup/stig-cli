@@ -2,8 +2,70 @@ const debug = require('debug')('output')
 const chalk = require('chalk')
 const { table } = require('table')
 const moment = require('moment')
-const red = (s) => chalk.red(s)
+const { stdout } = require('process')
+const wrap = require('wordwrap')(stdout.columns)
 const { getBenchmark } = require('./query')
+
+const red = (s) => chalk.red(s)
+const boldWhite = (s) => chalk.whiteBright.bold(s)
+const greyDivider = () => chalk.gray(divider('-'))
+
+const divider = char => {
+  let hr = ''
+  const width = stdout.columns
+  debug(`Width of ${width}`)
+  for (let i = 0; i < width; i++) {
+    hr += char || '#'
+  }
+  return hr
+}
+const readOut = async ({ dataDir, data, json }) => {
+    let output = json ? [] : [`${greyDivider()}\n`]
+    let usedIndexes = []
+    let currentBtitle
+    for await (const rule of data) {
+      const {
+        stigId,
+        ruleId,
+        severity,
+        title,
+        description,
+        fixText,
+        checkText,
+        stigIndex
+      } = rule
+      if (!usedIndexes.includes(stigIndex)) {
+        usedIndexes.push(stigIndex)
+        const { data: benchmarkObj } = await getBenchmark({ dataDir, index: stigIndex })
+        const { title: benchmarkTitle } = benchmarkObj
+        currentBtitle = benchmarkTitle
+      }
+      if (!json) {
+        output.push(`${boldWhite('Benchmark')}: ${currentBtitle}`)
+        output.push(`${boldWhite('Rule')}: ${title}`)
+        output.push(`${boldWhite('STIG ID')}: ${stigId}`)
+        output.push(`${boldWhite('Rule ID')}: ${ruleId}`)
+        output.push(`${boldWhite('Severity')}: ${severity}`)
+        output.push(`\n${boldWhite('Description')}:\n${description}`)
+        output.push(`\n${boldWhite('Check Text')}:\n${checkText}`)
+        output.push(`\n${boldWhite('Fix Text')}:\n${fixText}`)
+        output.push(`\n${greyDivider()}\n`)
+      } else {
+        output.push({
+          benchmarkTitle: currentBtitle,
+          severity,
+          title,
+          stigId,
+          ruleId,
+          description,
+          checkText,
+          fixText
+        })
+      }
+
+    }
+    return json ? JSON.stringify({ data: output }) : output.join('\n')
+}
 
 const defaultTableConfig = {
   columns: { // this is to wrap titles which can be long
@@ -100,5 +162,6 @@ const output = async ({ data, type, json }) => {
 }
 
 module.exports = {
-  output
+  output,
+  readOut
 }
