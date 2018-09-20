@@ -19,7 +19,6 @@ UpdateSourcesCommand.hidden = true
 
 UpdateSourcesCommand.description = `Updates Benchmark Sourcing Data
 Updates a benchmark's source data directly from the DISA STIG web portal. This does several things:
-- updates the, title, download endpoint, and revision from DISA's website.
 - downloads every public STIG zip archive
 - extracts every XML file and places it into the data directory of this library
 
