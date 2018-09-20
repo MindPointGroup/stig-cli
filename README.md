@@ -56,7 +56,7 @@ $ npm install -g stig
 $ stig COMMAND
 running command...
 $ stig (-v|--version|version)
-stig/1.0.0 darwin-x64 node-v10.7.0
+stig/2.0.0 darwin-x64 node-v10.7.0
 $ stig --help [COMMAND]
 USAGE
   $ stig COMMAND
@@ -131,7 +131,7 @@ DESCRIPTION
   for some slight formatting changes
 ```
 
-_See code: [src/commands/init.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/init.js)_
+_See code: [src/commands/init.js](https://github.com/defionscode/stig-cli/blob/v2.0.0/src/commands/init.js)_
 
 ## `stig ls [BENCHMARKID]`
 
@@ -223,7 +223,7 @@ EXAMPLES
   stig ls "Windows 10" -c low -c medium
 ```
 
-_See code: [src/commands/ls.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/ls.js)_
+_See code: [src/commands/ls.js](https://github.com/defionscode/stig-cli/blob/v2.0.0/src/commands/ls.js)_
 
 ## `stig read`
 
@@ -260,7 +260,7 @@ EXAMPLES
   $ stig read -b "Windows 10" -b 2
 ```
 
-_See code: [src/commands/read.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/read.js)_
+_See code: [src/commands/read.js](https://github.com/defionscode/stig-cli/blob/v2.0.0/src/commands/read.js)_
 
 ## `stig update [CHANNEL]`
 
