@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type='text/xsl' href='STIG_unclass.xsl'?><Benchmark xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="Citrix_XenDesktop_Delivery_Controller_STIG" xml:lang="en" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd" xmlns="http://checklists.nist.gov/xccdf/1.1"><status date="2018-08-28">accepted</status><title>Citrix XenDesktop 7.x Delivery Controller Security Technical Implementation Guide</title><description>This Security Technical Implementation Guide is published as a tool to improve the security of Department of Defense (DoD) information systems. The requirements are derived from the National Institute of Standards and Technology (NIST) 800-53 and related documents. Comments or proposed revisions to this document should be sent via email to the following address: disa.stig_spt@mail.mil.</description><notice id="terms-of-use" xml:lang="en"></notice><reference href="http://iase.disa.mil"><dc:publisher>DISA</dc:publisher><dc:source>STIG.DOD.MIL</dc:source></reference><plain-text id="release-info">Release: 1 Benchmark Date: 23 Aug 2018</plain-text><version>1</version><Profile id="MAC-1_Classified"><title>I - Mission Critical Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-1_Public"><title>I - Mission Critical Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-1_Sensitive"><title>I - Mission Critical Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-2_Classified"><title>II - Mission Support Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-2_Public"><title>II - Mission Support Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-2_Sensitive"><title>II - Mission Support Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-3_Classified"><title>III - Administrative Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-3_Public"><title>III - Administrative Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Profile id="MAC-3_Sensitive"><title>III - Administrative Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81403" selected="true" /><select idref="V-81405" selected="true" /><select idref="V-81407" selected="true" /><select idref="V-81409" selected="true" /><select idref="V-81411" selected="true" /></Profile><Group id="V-81403"><title>SRG-APP-000001</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96117r1_rule" severity="medium" weight="10.0"><version>CXEN-DC-000005</version><title>Delivery Controller must limit the number of concurrent sessions to an organization-defined number for all accounts and/or account types.</title><description>&lt;VulnDiscussion&gt;Application management includes the ability to control the number of users and user sessions that utilize an application. Limiting the number of allowed users and sessions per user is helpful in limiting risks related to Denial-of-Service (DoS) attacks.
+
+This requirement may be met via the application or by using information system session control provided by a web server with specialized session management capabilities. If it has been specified that this requirement will be handled by the application, the capability to limit the maximum number of concurrent single user sessions must be designed and built into the application. 
+
+This requirement addresses concurrent sessions for information system accounts and does not address concurrent sessions by single users via multiple system accounts. The maximum number of concurrent sessions should be defined based on mission needs and the operational environment for each system.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x Delivery Controller</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x Delivery Controller</dc:subject><dc:identifier>3291</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000054</ident><fixtext fixref="F-88209r1_fix">Open Citrix Studio, right-click a Delivery Group, and choose "Edit Delivery Group". 
+
+Uncheck the following check box: "Give access to unauthenticated (anonymous) users; no credentials are required to access StoreFront". 
+
+A Citrix Studio administrator account is needed to perform above fix.</fixtext><fix id="F-88209r1_fix" /><check system="C-81133r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_Delivery_Controller_STIG.xml" /><check-content>Open Citrix Studio, right-click a Delivery Group, and choose "Edit Delivery Group". 
+
+Verify the following check box is not checked: "Give access to unauthenticated (anonymous) users; no credentials are required to access StoreFront". 
+
+If the check box is checked, this is a finding.
+
+A Citrix Studio administrator account is needed to perform this check. Performing this check does not impact system reliability or availability.</check-content></check></Rule></Group><Group id="V-81405"><title>SRG-APP-000014</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96119r1_rule" severity="high" weight="10.0"><version>CXEN-DC-000030</version><title>Delivery Controller must implement DoD-approved encryption.</title><description>&lt;VulnDiscussion&gt;Without confidentiality protection mechanisms, unauthorized individuals may gain access to sensitive information via a remote access session. 
+
+Remote access is access to DoD nonpublic information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network. Remote access methods include, for example, dial-up, broadband, and wireless. 
+
+Encryption provides a means to secure the remote connection to prevent unauthorized access to the data traversing the remote access connection, thereby providing a degree of confidentiality. The encryption strength of mechanism is selected based on the security categorization of the information.
+
+Satisfies: SRG-APP-000014, SRG-APP-000015, SRG-APP-000039, SRG-APP-000142, SRG-APP-000172, SRG-APP-000219, SRG-APP-000224, SRG-APP-000416, SRG-APP-000439, SRG-APP-000440, SRG-APP-000441, SRG-APP-000442&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x Delivery Controller</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x Delivery Controller</dc:subject><dc:identifier>3291</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000068</ident><ident system="http://iase.disa.mil/cci">CCI-000197</ident><ident system="http://iase.disa.mil/cci">CCI-000382</ident><ident system="http://iase.disa.mil/cci">CCI-001184</ident><ident system="http://iase.disa.mil/cci">CCI-001188</ident><ident system="http://iase.disa.mil/cci">CCI-001414</ident><ident system="http://iase.disa.mil/cci">CCI-001453</ident><ident system="http://iase.disa.mil/cci">CCI-002418</ident><ident system="http://iase.disa.mil/cci">CCI-002420</ident><ident system="http://iase.disa.mil/cci">CCI-002421</ident><ident system="http://iase.disa.mil/cci">CCI-002422</ident><ident system="http://iase.disa.mil/cci">CCI-002450</ident><fixtext fixref="F-88211r1_fix">Obtain and install root certificate(s) for server certificates installed on Desktop/Server VDAs, SQL Server(s), Storefront, and VM Host (VMware VCenter, Hyper-V, XenServer).
+
+To install a TLS server certificate on the Delivery Controller and to configure a port with TLS 1.x:
+1. Log on to the Delivery Controller server with a domain account that has Administrator rights.
+2. Obtain a TLS server certificate and install it on the Delivery Controller using Microsoft server instructions.
+3. Configure the Delivery Controller with the certificate.
+
+When the Server Certificate is installed on IIS, set the Bindings to enable HTTPS on IIS by completing the following procedure:
+1. Select the IIS site that you want to enable HTTPS and select "Bindings" under "Edit Site".
+2. Click "Add", select "Type" as https and port number as "443". Select the SSL Certificate that was installed and click "OK".
+3. Open the Registry Editor on the XenDesktop Controller and find the following key name:
+HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\DesktopServer
+4. Verify that XmlServicesSslPort registry key exists with the correct value for SSL port. By default, it is set to "443".
+5. Change the XML service port using PowerShell or by running the following command:
+BrokerService –WiSslPort &lt;port number&gt;
+
+Notes:
+a) If you decide to change the XML service port number on the XenDesktop controller, update the IIS port number as well under "Bindings" to match the new value.
+b) On XenDesktop 7.11, the parameter of brokerservice.exe has changed from "wisslport" to "storefronttlsport". The brokerservice.exe is found in c:\program files\citrix\broker\service. 
+A reboot of the Delivery Controller is needed for this to take effect.
+
+To change the default VDA registration port:
+1. Log on to the Delivery Controller server with a domain account that has Administrator rights.
+2. Open the command prompt window and type these commands:
+%SystemDrive%
+Cd %ProgramFiles%\Citrix\Broker\Service
+BrokerService.exe –VDAport 8888
+3. Launch Server Manager from the Start menu.
+4. In the Server Manager, go to the "Local Server" properties window and edit the "Windows Firewall" setting. Click "Advanced Settings".
+5. Click "Inbound Rules".
+6. Create a new inbound rule with the following settings:
+a) In the Rule type screen, click "Port". Click "Next".
+b) In the Protocol and Ports screen, select "Specific local ports" and type "8888". Click "Next".
+c) In the Action screen, accept the default value "Allow the connection" and click "Next".
+d) In the Profile screen, accept the default values and click "Next".
+e) In the Name screen, type a name for the rule (example: Citrix VDA Registration Port)
+and click "Finish".
+
+For correct Cipher Suite order per DoD guidance:
+Apply the following to Computers OU containing XenDesktop infrastructure:
+- XD2017 CC - Computer - SSL Ciphersuite Order
+
+To configure the SSL Cipher Suite Order Group Policy setting manually, follow these steps:
+1. At a command prompt, enter "gpedit.msc", and press "Enter". The Local Group Policy Editor is displayed.
+2. Go to Computer Configuration &gt;&gt; Administrative Templates &gt;&gt; Network &gt;&gt; SSL Configuration Settings.
+3. Under SSL Configuration Settings, select "SSL Cipher Suite Order".
+4. In the SSL Cipher Suite Order pane, scroll to the bottom. Follow the instructions that are labeled "How to modify this setting".</fixtext><fix id="F-88211r1_fix" /><check system="C-81135r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_Delivery_Controller_STIG.xml" /><check-content>Enforcement is via FIPS encryption. To verify, open the Registry Editor on the XenDesktop Delivery Controller and find the following key name: HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\DesktopServer 
+
+1. Verify that the XmlServicesSslPort registry key exists with the correct value for SSL port. By default, it is set to "443".
+2. Verify XmlServicesEnableNonSsl is set to "0".
+3. Verify the corresponding registry value to ignore HTTPS traffic, XmlServicesEnableSsl, is not set to "0".
+
+If "XmlServicesSslPort" is not set to the desired port, this is a finding.
+
+If "XmlServicesEnableNonSsl" is not set to "0", this is a finding.
+
+If XmlServicesEnableSsl is set to "0", this is a finding.
+
+To verify the FIPS Cipher Suites used:
+1. From the Group Policy Management Console, go to Computer Configuration &gt;&gt; Administrative Templates &gt;&gt; Networks &gt;&gt; SSL Configuration Settings.
+2. Double-click "SSL Cipher Suite Order" and verify the "Enabled" option is checked. 
+3. Verify the correct Cipher Suites are listed in the correct order per current DoD guidelines.
+
+If the "Enabled" option is not checked or the correct Cipher Suites are not listed in the correct order per current DoD guidelines, this is a finding.</check-content></check></Rule></Group><Group id="V-81407"><title>SRG-APP-000141</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96121r1_rule" severity="medium" weight="10.0"><version>CXEN-DC-000270</version><title>Delivery Controller must be configured to disable non-essential capabilities.</title><description>&lt;VulnDiscussion&gt;It is detrimental for applications to provide or install by default functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.
+
+Applications are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations (e.g., key missions, functions). 
+
+Examples of non-essential capabilities include but are not limited to advertising software or browser plug-ins not related to requirements or providing a wide array of functionality not required for every mission but that cannot be disabled.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x Delivery Controller</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x Delivery Controller</dc:subject><dc:identifier>3291</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000381</ident><fixtext fixref="F-88213r1_fix">To disable Citrix CEIP - Phone Home:
+1. Launch Studio.
+2. Select "Configuration" in the left navigation pane.
+3. Select the Support tab.
+4. Follow the prompts to end participation in CEIP.
+
+This prevents automatic upload of installation experience metrics that are collected locally during installation.
+XenDesktopServerStartup.exe /components "CONTROLLER,DESKTOPSTUDIO"
+/disableexperiencemetrics /exclude "Smart Tools Agent" /nosql
+/quiet /verboselog /noreboot</fixtext><fix id="F-88213r1_fix" /><check system="C-81137r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_Delivery_Controller_STIG.xml" /><check-content>Verify Citrix Customer Experience Improvement Program (CEIP) - PHONE HOME is disabled on XenDesktop Delivery Controller.
+
+1. Launch Studio.
+2. Select "Configuration" in the left navigation pane.
+3. Select the Support tab.
+4. Verify CEIP is disabled.
+
+If CEIP is not disabled, this is a finding.</check-content></check></Rule></Group><Group id="V-81409"><title>SRG-APP-000514</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96123r1_rule" severity="high" weight="10.0"><version>CXEN-DC-001225</version><title>Delivery Controller must implement NIST FIPS-validated cryptography for the following: to provision digital signatures; to generate cryptographic hashes; and to protect unclassified information requiring confidentiality and cryptographic protection in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.</title><description>&lt;VulnDiscussion&gt;Use of weak or untested encryption algorithms undermines the purposes of using encryption to protect data. The application must implement cryptographic modules adhering to the higher standards approved by the Federal Government since this provides assurance they have been tested and validated.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x Delivery Controller</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x Delivery Controller</dc:subject><dc:identifier>3291</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-002450</ident><fixtext fixref="F-88215r1_fix">Obtain and install root certificate(s) for server certificates installed on Desktop/Server VDAs, SQL Server(s), Storefront, and VM Host (VMware VCenter, Hyper-V, XenServer).
+
+To install a TLS server certificate on the Delivery Controller and to configure a port with TLS 1.x:
+1. Log on to the Delivery Controller server with a domain account that has Administrator rights.
+2. Obtain a TLS server certificate and install it on the Delivery Controller using Microsoft server instructions.
+3. Configure the Delivery Controller with the certificate.
+
+When the Server Certificate is installed on IIS, set the Bindings to enable HTTPS on IIS by completing the following procedure:
+1. Select the IIS site that you want to enable HTTPS and select "Bindings" under "Edit Site".
+2. Click "Add" and select "Type" as "https" and port number as "443". Select the SSL Certificate that was installed and click "OK".
+3. Open the Registry Editor on the XenDesktop Controller and find the following key name:
+HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\DesktopServer
+4. Verify that XmlServicesSslPort registry key exists with the correct value for the SSL port. By default, it is set to "443".
+5. Change the XML service port using PowerShell by running the following command:
+BrokerService –WiSslPort &lt;port number&gt;
+
+Notes:
+a) If changing the XML service port number on the XenDesktop controller, update the IIS port number under "Bindings" to match the new value.
+b) On XenDesktop 7.11, the parameter of brokerservice.exe has changed from "wisslport" to "storefronttlsport". The brokerservice.exe is found in c:\program files\citrix\broker\service. A reboot of the Delivery Controller is needed for this to take effect.
+
+To change the default VDA registration port:
+1. Log on to the Delivery Controller server with a domain account that has Administrator rights.
+2. Open the command prompt window and type these commands:
+%SystemDrive%
+Cd %ProgramFiles%\Citrix\Broker\Service
+BrokerSerivce.exe –VDAport 8888
+3. Launch "Server Manager" from the Start menu.
+4. In the Server Manager, go to the Local Server properties window and edit the "Windows Firewall" setting. Click "Advanced Settings".
+5. Click "Inbound Rules".
+6. Create a new inbound rule with the following settings:
+a) In the Rule type screen, click "Port". Click "Next".
+b) In the Protocol and Ports screen, select "Specific local ports" and type "8888". Click "Next".
+c) In the Action screen, accept the default value "Allow the connection" and click "Next".
+d) In the Profile screen, accept the default values and click "Next".
+e) In the Name screen, type a name for the rule (example: Citrix VDA Registration Port)
+and click "Finish".
+
+For correct Cipher Suite order per DoD guidance:
+Apply the following to Computers OU containing XenDesktop infrastructure:
+- XD2017 CC - Computer - SSL Ciphersuite Order
+
+To configure the SSL Cipher Suite Order Group Policy setting manually, follow these steps:
+1. At a command prompt, enter "gpedit.msc", and press "Enter". The Local Group Policy Editor is displayed.
+2. Go to Computer Configuration &gt;&gt; Administrative Templates &gt;&gt; Network &gt;&gt; SSL Configuration Settings.
+3. Under SSL Configuration Settings, select "SSL Cipher Suite Order".
+4. In the SSL Cipher Suite Order pane, scroll to the bottom.
+5. Follow the instructions that are labeled "How to modify this setting".</fixtext><fix id="F-88215r1_fix" /><check system="C-81139r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_Delivery_Controller_STIG.xml" /><check-content>Enforcement is via FIPs encryption. To verify, open the Registry Editor on the XenDesktop Controller and find the following key name: HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\DesktopServer 
+
+1. Verify the XmlServicesSslPort registry key exists with the correct value for SSL port. By default, it is set to "443".
+2. Verify XmlServicesEnableNonSsl is set to "0".
+3. Verify the corresponding registry value to ignore HTTPS traffic, XmlServicesEnableSsl, is not set to "0".
+
+If "XmlServicesSslPort" is not set to the desired port, this is a finding.
+
+If "XmlServicesEnableNonSsl" is not set to "0", this is a finding.
+
+If XmlServicesEnableSsl is set to "0", this is a finding.
+
+To verify FIPS Cipher Suites used:
+1. From the Group Policy Management Console, go to Computer Configuration &gt;&gt; Administrative Templates &gt;&gt; Networks &gt;&gt; SSL Configuration Settings.
+2. Double-click SSL Cipher Suite Order and verify the "Enabled" option is checked.
+3. Verify the correct Cipher Suites are listed in the correct order per current DoD guidelines.
+
+If the "Enabled" option is not checked or the correct Cipher Suites are not listed in the correct order per current DoD guidelines, this is a finding.</check-content></check></Rule></Group><Group id="V-81411"><title>SRG-APP-000516</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96125r1_rule" severity="medium" weight="10.0"><version>CXEN-DC-001235</version><title>Delivery Controller must be configured in accordance with the security configuration settings based on DoD security configuration or implementation guidance, including STIGs, NSA configuration guides, CTOs, and DTMs.</title><description>&lt;VulnDiscussion&gt;Configuring the application to implement organization-wide security implementation guides and security checklists ensures compliance with federal standards and establishes a common security baseline across DoD that reflects the most restrictive security posture consistent with operational requirements. 
+
+Configuration settings are the set of parameters that can be changed that affects the security posture and/or functionality of the system. Security-related parameters are parameters impacting the security state of the application, including the parameters required to satisfy other security control requirements.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x Delivery Controller</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x Delivery Controller</dc:subject><dc:identifier>3291</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000366</ident><fixtext fixref="F-88217r1_fix">To ensure that XenDesktop Controller and all other infrastructure server components are installable and manageable by authorized administrative accounts, the following policies must be modified:
+
+Go to Computer Configuration Policies &gt;&gt; Windows Settings &gt;&gt; Security Settings &gt;&gt; Local Policies/User Rights Assignment.
+1. Edit "Allow log on locally".
+2. Edit "Shut down the system".
+3. Change both settings to the global security group name containing the XenApp or XenDesktop administrators.</fixtext><fix id="F-88217r1_fix" /><check system="C-81141r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_Delivery_Controller_STIG.xml" /><check-content>To verify that XenDesktop Controller and all other infrastructure server components are installable and manageable by authorized administrative accounts, the following policies must be modified:
+
+Go to Computer Configuration Policies &gt;&gt; Windows Settings &gt;&gt; Security Settings &gt;&gt; Local Policies/User Rights Assignment.
+
+Verify policy settings "Allow log on locally" and "Shut down the system" are both set to the global security group name containing the XenApp or XenDesktop administrators.
+
+If they are not, this is a finding.</check-content></check></Rule></Group></Benchmark>

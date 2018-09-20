@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type='text/xsl' href='STIG_unclass.xsl'?><Benchmark xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="Citrix_XenDesktop_7-x_Windows_VDA_STIG" xml:lang="en" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd" xmlns="http://checklists.nist.gov/xccdf/1.1"><status date="2018-08-28">accepted</status><title>Citrix XenDesktop 7.x Windows Virtual Delivery Agent Security Technical Implementation Guide</title><description>This Security Technical Implementation Guide is published as a tool to improve the security of Department of Defense (DoD) information systems. The requirements are derived from the National Institute of Standards and Technology (NIST) 800-53 and related documents. Comments or proposed revisions to this document should be sent via email to the following address: disa.stig_spt@mail.mil.</description><notice id="terms-of-use" xml:lang="en"></notice><reference href="http://iase.disa.mil"><dc:publisher>DISA</dc:publisher><dc:source>STIG.DOD.MIL</dc:source></reference><plain-text id="release-info">Release: 1 Benchmark Date: 23 Aug 2018</plain-text><version>1</version><Profile id="MAC-1_Classified"><title>I - Mission Critical Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-1_Public"><title>I - Mission Critical Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-1_Sensitive"><title>I - Mission Critical Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-2_Classified"><title>II - Mission Support Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-2_Public"><title>II - Mission Support Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-2_Sensitive"><title>II - Mission Support Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-3_Classified"><title>III - Administrative Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-3_Public"><title>III - Administrative Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Profile id="MAC-3_Sensitive"><title>III - Administrative Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81433" selected="true" /><select idref="V-81435" selected="true" /><select idref="V-81437" selected="true" /><select idref="V-81439" selected="true" /></Profile><Group id="V-81433"><title>SRG-APP-000014</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96147r1_rule" severity="high" weight="10.0"><version>CXEN-VD-000030</version><title>Citrix Windows Virtual Delivery Agent must implement DoD-approved encryption.</title><description>&lt;VulnDiscussion&gt;Without confidentiality protection mechanisms, unauthorized individuals may gain access to sensitive information via a remote access session. 
+
+Remote access is access to DoD nonpublic information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network. Remote access methods include, for example, dial-up, broadband, and wireless. 
+
+Encryption provides a means to secure the remote connection to prevent unauthorized access to the data traversing the remote access connection thereby providing a degree of confidentiality. The encryption strength of mechanism is selected based on the security categorization of the information.
+
+Satisfies: SRG-APP-000014, SRG-APP-000015, SRG-APP-000039, SRG-APP-000219, SRG-APP-000439, SRG-APP-000440, SRG-APP-000441, SRG-APP-000442&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x VDA-Windows</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x VDA-Windows</dc:subject><dc:identifier>3297</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000068</ident><ident system="http://iase.disa.mil/cci">CCI-001184</ident><ident system="http://iase.disa.mil/cci">CCI-001414</ident><ident system="http://iase.disa.mil/cci">CCI-001453</ident><ident system="http://iase.disa.mil/cci">CCI-002418</ident><ident system="http://iase.disa.mil/cci">CCI-002420</ident><ident system="http://iase.disa.mil/cci">CCI-002421</ident><ident system="http://iase.disa.mil/cci">CCI-002422</ident><fixtext fixref="F-88251r1_fix">Configure TLS on a VDA using the PowerShell script:
+1. Install the TLS Certificate in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store. 
+2. If more than one certificate resides in that location, supply the thumbprint of the certificate to the PowerShell script.
+
+The Enable-VdaSSL.ps1 script enables or disables the TLS listener on a VDA. This script is available in the Support &gt;&gt; Tools &gt;&gt; SslSupport folder on the installation media.
+
+When you enable TLS, the script disables all existing Windows Firewall rules for the specified TCP port. It then adds a new rule that allows the ICA Service to accept incoming connections only on the TLS TCP and UDP ports. It also disables the Windows Firewall rules for:
+- Citrix ICA (default: 1494)
+- Citrix CGP (default: 2598)
+- Citrix WebSocket (default: 8008)
+
+The effect is that users can only connect using TLS or DTLS. They cannot use ICA/HDX, ICA/HDX with Session Reliability, or HDX over WebSocket without TLS or DTLS.
+
+The PowerShell script configures TLS on static VDAs; it does not configure TLS on pooled VDAs that are provisioned by Machine Creation Services or Provisioning Services, where the machine image resets on each restart.
+
+Manually configure TLS on a VDA: 
+When configuring TLS on a VDA manually, you grant generic read access to the TLS certificate's private key for the appropriate service on each VDA: NT SERVICE\PorticaService for a VDA for Windows Desktop OS, or NT SERVICE\TermService for a VDA for Windows Server OS. 
+
+On the machine where the VDA is installed:
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+a) Select File &gt;&gt; Add/Remove Snap-in.
+b) Select "Certificates" and then click "Add".
+c) When prompted with "This snap-in will always manage certificates for:" choose "Computer account" and then click "Next".
+d) When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+3. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right–click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+4. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of the TLS certificate. Add one of the following services and give it Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+5. Double-click the installed TLS certificate. In the certificate dialog, select the Details tab and then scroll to the bottom. Click "Thumbprint".
+6. Run regedit and go to HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\icawd.
+a) Edit the SSL Thumbprint key and copy the value of the TLS certificate's thumbprint into this binary value. You can safely ignore unknown items in the Edit Binary Value dialog box (such as "0000" and special characters).
+b) Edit the SSLEnabled key and change the DWORD value to "1". (To disable SSL later, change the DWORD value to "0".)
+c) To change the default settings (optional), use the following in the same registry path:
+SSLPort DWORD – SSL port number. Default: 443.
+SSLMinVersion DWORD – 1 = SSL 3.0, 2 = TLS 1.0, 3 = TLS 1.1, 4 = TLS 1.2. Default: 2 (TLS 1.0).
+SSLCipherSuite DWORD – 1 = GOV, 2 = COM, 3 = ALL. Default: 3 (ALL).
+7. Ensure the TLS TCP port is open in the Windows Firewall if it is not the default "443". (When creating the inbound rule in Windows Firewall, make sure its properties have the "Allow the connection" and "Enabled" entries selected.)
+8. Ensure that no other applications or services (such as IIS) are using the TLS TCP port.
+9. For VDAs for Windows Server OS, restart the machine for the changes to take effect. (You do not need to restart machines containing VDAs for Windows Desktop OS.)
+
+Configure TLS on Delivery Groups:
+Complete this procedure for each Delivery Group that contains VDAs that have been configured for TLS connections.
+1. From Studio, open the PowerShell console.
+2. Run asnp Citrix.* to load the Citrix product cmdlets.
+3. Run Get-BrokerAccessPolicyRule -DesktopGroupName '&lt;delivery-group-name&gt;' | Set-BrokerAccessPolicyRule -HdxSslEnabled $true.
+4. Run Set-BrokerSite -DnsResolutionEnabled $true.</fixtext><fix id="F-88251r1_fix" /><check system="C-81173r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_7-x_Windows_VDA_STIG.xml" /><check-content>Verify TLS Certificate is installed in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store.
+
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+- Select File &gt;&gt; Add/Remove Snap-in.
+- Select "Certificates" and then click "Add".
+3. When prompted with "This snap-in will always manage certificates for:" choose "Computer account" and then click "Next".
+4. When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+5. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right–click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+6. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of the SSL certificate. Verify one of the following services is listed with Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+
+If one of the associated services is not listed with Read access, this is a finding.</check-content></check></Rule></Group><Group id="V-81435"><title>SRG-APP-000142</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96149r1_rule" severity="medium" weight="10.0"><version>CXEN-VD-000275</version><title>Citrix Windows Virtual Delivery Agent must be configured to prohibit or restrict the use of ports, as defined in the PPSM CAL and vulnerability assessments.</title><description>&lt;VulnDiscussion&gt;In order to prevent unauthorized connection of devices, unauthorized transfer of information, or unauthorized tunneling (i.e., embedding of data types within data types), organizations must disable or restrict unused or unnecessary physical and logical ports/protocols on information systems.
+
+Applications are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Additionally, it is sometimes convenient to provide multiple services from a single component (e.g., email and web services; however, doing so increases risk over limiting the services provided by any one component. 
+
+To support the requirements and principles of least functionality, the application must support the organizational requirements providing only essential capabilities and limiting the use of ports, protocols, and/or services to only those required, authorized, and approved to conduct official business or to address authorized quality of life issues.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x VDA-Windows</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x VDA-Windows</dc:subject><dc:identifier>3297</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000382</ident><fixtext fixref="F-88253r1_fix">To change the VDA registration port from the default "80", create the Citrix Machine Policy and update the DDCs, as explained below:
+1. Create a new Citrix Machine policy or edit an existing one.
+2. Navigate to the Settings tab and select "Control Registration Port".
+3. Update the Value to reflect the new port.
+4. Select "OK".
+5. Restart all desktops and wait until all the desktops report as Unregistered.
+6. Update the DDCs' VDA registration Port.
+7. Restart all desktops and verify that all VDAs register successfully.</fixtext><fix id="F-88253r1_fix" /><check system="C-81175r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_7-x_Windows_VDA_STIG.xml" /><check-content>On Delivery Controllers, verify that only approved ports are used. 
+
+1. Open a command prompt.
+2. Navigate to the XenDesktop install directory Program Files\Citrix\Broker\Service
+3. Enter BrokerService.exe /Show to display the currently used ports.
+
+If an unapproved port is used, this is a finding.</check-content></check></Rule></Group><Group id="V-81437"><title>SRG-APP-000427</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96151r1_rule" severity="high" weight="10.0"><version>CXEN-VD-000970</version><title>Citrix Windows Virtual Delivery Agent must only allow the use of DoD PKI established certificate authorities for verification of the establishment of protected sessions.</title><description>&lt;VulnDiscussion&gt;Untrusted Certificate Authorities (CA) can issue certificates, but they may be issued by organizations or individuals that seek to compromise DoD systems or by organizations with insufficient security controls. If the CA used for verifying the certificate is not a DoD-approved CA, trust of this CA has not been established.
+
+The DoD will only accept PKI certificates obtained from a DoD-approved internal or external certificate authority. Reliance on CAs for the establishment of secure sessions includes, for example, the use of SSL/TLS certificates. 
+
+This requirement focuses on communications protection for the application session rather than for the network packet.
+
+This requirement applies to applications that utilize communications sessions. This includes, but is not limited to, web-based applications and Service-Oriented Architectures (SOA).&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x VDA-Windows</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x VDA-Windows</dc:subject><dc:identifier>3297</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-002470</ident><fixtext fixref="F-88255r1_fix">Configure TLS on a VDA using the PowerShell script:
+1. Install the TLS Certificate in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store. 
+2. If more than one certificate resides in that location, supply the thumbprint of the certificate to the PowerShell script.
+
+The Enable-VdaSSL.ps1 script enables or disables the TLS listener on a VDA. This script is available in the Support &gt;&gt; Tools &gt;&gt; SslSupport folder on the installation media.
+
+When you enable TLS, the script disables all existing Windows Firewall rules for the specified TCP port. It then adds a new rule that allows the ICA Service to accept incoming connections only on the TLS TCP and UDP ports. It also disables the Windows Firewall rules for:
+- Citrix ICA (default: 1494)
+- Citrix CGP (default: 2598)
+- Citrix WebSocket (default: 8008)
+
+The effect is that users can only connect using TLS or DTLS. They cannot use ICA/HDX, ICA/HDX with Session Reliability, or HDX over WebSocket, without TLS or DTLS.
+
+The PowerShell script configures TLS on static VDAs; it does not configure TLS on pooled VDAs that are provisioned by Machine Creation Services or Provisioning Services, where the machine image resets on each restart.
+
+Manually configure TLS on a VDA: 
+When configuring TLS on a VDA manually, you grant generic read access to the TLS certificate's private key for the appropriate service on each VDA: NT SERVICE\PorticaService for a VDA for Windows Desktop OS, or NT SERVICE\TermService for a VDA for Windows Server OS. 
+
+On the machine where the VDA is installed:
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+a) Select File &gt;&gt; Add/Remove Snap-in.
+b) Select "Certificates" and then click "Add".
+c) When prompted with "This snap-in will always manage certificates for:", choose "Computer account" and then click "Next".
+d) When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+3. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right-click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+4. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of your TLS certificate. Add one of the following services and give it Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+5. Double-click the installed TLS certificate. In the certificate dialog, select the Details tab and then scroll to the bottom. Click "Thumbprint".
+6. Run regedit and go to HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\icawd.
+a) Edit the SSL Thumbprint key and copy the value of the TLS certificate's thumbprint into this binary value. You can safely ignore unknown items in the Edit Binary Value dialog box (such as "0000" and special characters).
+b) Edit the SSLEnabled key and change the DWORD value to "1". (To disable SSL later, change the DWORD value to "0".)
+c) To change the default settings (optional), use the following in the same registry path:
+SSLPort DWORD – SSL port number. Default: 443.
+SSLMinVersion DWORD – 1 = SSL 3.0, 2 = TLS 1.0, 3 = TLS 1.1, 4 = TLS 1.2. Default: 2 (TLS 1.0).
+SSLCipherSuite DWORD – 1 = GOV, 2 = COM, 3 = ALL. Default: 3 (ALL).
+7. Ensure the TLS TCP port is open in the Windows Firewall if it is not the default "443". (When you create the inbound rule in Windows Firewall, make sure its properties have the "Allow the connection" and "Enabled" entries selected.)
+8. Ensure that no other applications or services (such as IIS) are using the TLS TCP port.
+9. For VDAs for Windows Server OS, restart the machine for the changes to take effect. (You do not need to restart machines containing VDAs for Windows Desktop OS.)
+
+Configure TLS on Delivery Groups:
+Complete this procedure for each Delivery Group that contains VDAs that have been configured for TLS connections.
+1. From Studio, open the PowerShell console.
+2. Run asnp Citrix.* to load the Citrix product cmdlets.
+3. Run Get-BrokerAccessPolicyRule -DesktopGroupName '&lt;delivery-group-name&gt;' | Set-BrokerAccessPolicyRule -HdxSslEnabled $true.
+4. Run Set-BrokerSite -DnsResolutionEnabled $true.</fixtext><fix id="F-88255r1_fix" /><check system="C-81177r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_7-x_Windows_VDA_STIG.xml" /><check-content>Verify TLS Certificate is installed in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store.
+
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+- Select File &gt;&gt; Add/Remove Snap-in.
+- Select "Certificates" and then click "Add".
+3. When prompted with "This snap-in will always manage certificates for:", choose "Computer account" and then click "Next".
+4. When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+5. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right–click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+6. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of the SSL certificate. Verify one of the following services is listed with Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+7. Ensure the SSL TCP port is open in the Windows Firewall if it is not the default "443". 
+
+If one of the associated services is not listed with Read access, this is a finding.
+
+If the SSL TCP port is not open in the Windows Firewall if it is not the default "443", this is a finding.</check-content></check></Rule></Group><Group id="V-81439"><title>SRG-APP-000428</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-96153r1_rule" severity="high" weight="10.0"><version>CXEN-VD-000975</version><title>Citrix Windows Virtual Delivery Agent must implement cryptographic mechanisms to prevent unauthorized modification of organization-defined information at rest on organization-defined information system components.</title><description>&lt;VulnDiscussion&gt;Applications handling data requiring "data at rest" protections must employ cryptographic mechanisms to prevent unauthorized disclosure and modification of the information at rest.
+
+Selection of a cryptographic mechanism is based on the need to protect the integrity of organizational information. The strength of the mechanism is commensurate with the security category and/or classification of the information. Organizations have the flexibility to either encrypt all information on storage devices (i.e., full disk encryption) or encrypt specific data structures (e.g., files, records, or fields).&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target XenDesktop 7.x VDA-Windows</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>XenDesktop 7.x VDA-Windows</dc:subject><dc:identifier>3297</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-002475</ident><fixtext fixref="F-88257r1_fix">Configure TLS on a VDA using the PowerShell script:
+1. Install the TLS Certificate in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store.
+2. If more than one certificate resides in that location, supply the thumbprint of the certificate to the PowerShell script.
+
+The Enable-VdaSSL.ps1 script enables or disables the TLS listener on a VDA. This script is available in the Support &gt;&gt; Tools &gt;&gt; SslSupport folder on the installation media.
+
+When you enable TLS, the script disables all existing Windows Firewall rules for the specified TCP port. It then adds a new rule that allows the ICA Service to accept incoming connections only on the TLS TCP and UDP ports. It also disables the Windows Firewall rules for:
+- Citrix ICA (default: 1494)
+- Citrix CGP (default: 2598)
+- Citrix WebSocket (default: 8008)
+
+The effect is that users can only connect using TLS or DTLS. They cannot use ICA/HDX, ICA/HDX with Session Reliability, or HDX over WebSocket, without TLS or DTLS.
+
+The PowerShell script configures TLS on static VDAs; it does not configure TLS on pooled VDAs that are provisioned by Machine Creation Services or Provisioning Services, where the machine image resets on each restart.
+
+Manually configure TLS on a VDA:
+When configuring TLS on a VDA manually, you grant generic read access to the TLS certificate's private key for the appropriate service on each VDA: NT SERVICE\PorticaService for a VDA for Windows Desktop OS, or NT SERVICE\TermService for a VDA for Windows Server OS. 
+
+On the machine where the VDA is installed:
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+a) Select File &gt;&gt; Add/Remove Snap-in.
+b) Select "Certificates" and then click "Add".
+c) When prompted with "This snap-in will always manage certificates for:", choose "Computer account" and then click "Next".
+d) When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+3. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right-click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+4. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of the TLS certificate. Add one of the following services and give it Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+5. Double-click the installed TLS certificate. In the certificate dialog, select the Details tab and then scroll to the bottom. Click "Thumbprint".
+6. Run regedit and go to HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\icawd.
+a) Edit the SSL Thumbprint key and copy the value of the TLS certificate's thumbprint into this binary value. You can safely ignore unknown items in the Edit Binary Value dialog box (such as "0000" and special characters).
+b) Edit the SSLEnabled key and change the DWORD value to "1". (To disable SSL later, change the DWORD value to "0".)
+c) If you want to change the default settings (optional), use the following in the same registry path:
+SSLPort DWORD – SSL port number. Default: 443.
+SSLMinVersion DWORD – 1 = SSL 3.0, 2 = TLS 1.0, 3 = TLS 1.1, 4 = TLS 1.2. Default: 2 (TLS 1.0).
+SSLCipherSuite DWORD – 1 = GOV, 2 = COM, 3 = ALL. Default: 3 (ALL).
+7. Ensure the TLS TCP port is open in the Windows Firewall if it is not the default "443". (When you create the inbound rule in Windows Firewall, make sure its properties have the "Allow the connection" and "Enabled" entries selected.)
+8. Ensure that no other applications or services (such as IIS) are using the TLS TCP port.
+9. For VDAs for Windows Server OS, restart the machine for the changes to take effect. (You do not need to restart machines containing VDAs for Windows Desktop OS.)
+
+Configure TLS on Delivery Groups:
+Complete this procedure for each Delivery Group that contains VDAs that have been configured for TLS connections.
+1. From Studio, open the PowerShell console.
+2. Run asnp Citrix.* to load the Citrix product cmdlets.
+3. Run Get-BrokerAccessPolicyRule -DesktopGroupName '&lt;delivery-group-name&gt;' | Set-BrokerAccessPolicyRule -HdxSslEnabled $true.
+4. Run Set-BrokerSite -DnsResolutionEnabled $true.</fixtext><fix id="F-88257r1_fix" /><check system="C-81179r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_Citrix_XenDesktop_7-x_Windows_VDA_STIG.xml" /><check-content>Verify TLS Certificate is installed in the Local Computer &gt;&gt; Personal &gt;&gt; Certificates area of the certificate store.
+1. Launch the Microsoft Management Console (MMC): Start &gt;&gt; Run &gt;&gt; mmc.exe.
+2. Add the Certificates snap-in to the MMC:
+- Select File &gt;&gt; Add/Remove Snap-in.
+- Select "Certificates" and then click "Add".
+3. When prompted with "This snap-in will always manage certificates for:", choose "Computer account" and then click "Next".
+4. When prompted with "Select the computer you want this snap-in to manage", choose "Local computer" and then click "Finish".
+5. Under Certificates (Local Computer) &gt;&gt; Personal &gt;&gt; Certificates, right–click the certificate and then select All Tasks &gt;&gt; Manage Private Keys.
+6. The Access Control List Editor displays "Permissions for (FriendlyName) private keys" where (FriendlyName) is the name of your SSL certificate. Verify one of the following services is listed with Read access:
+- For a VDA for Windows Desktop OS, "PORTICASERVICE"
+- For a VDA for Windows Server OS, "TERMSERVICE"
+7. Ensure the SSL TCP port is open in the Windows Firewall if it is not the default "443". 
+
+If one of the associated services is not listed with Read access, this is a finding.
+
+If the SSL TCP port is not open in the Windows Firewall if it is not the default "443", this is a finding.</check-content></check></Rule></Group></Benchmark>
