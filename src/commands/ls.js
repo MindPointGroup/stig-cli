@@ -1,13 +1,11 @@
 const { Command, flags } = require('@oclif/command')
 const { json } = require('../flags/format-output')
-const { join } = require('path')
 const { output } = require('../utils/output')
 const {
   getBenchmarks,
-  getRules,
+  getRules
 } = require('../utils/query')
 const debug = require('debug')('command:ls')
-
 
 class LsCommand extends Command {
   async run () {

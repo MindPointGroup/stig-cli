@@ -1,101 +1,91 @@
 const { Command, flags } = require('@oclif/command')
 const { json } = require('../flags/format-output')
-const debug = require('debug')('read')
-const { findInAll, findInBenchmark, showResults } = require('../utils/read')
+const debug = require('debug')('command:read')
+const { getRule, getRules } = require('../utils/query')
+const { readOut, output } = require('../utils/output')
 
 class ReadCommand extends Command {
   async run () {
+    const dataDir = this.config.dataDir
     const { flags, args } = this.parse(ReadCommand)
-    debug(flags, args)
-    const { benchmarkId } = args
-    const { json, rule } = flags
+    const { json, cats } = flags
+    let severities = cats
+    if (cats === 'all') {
+      severities = ['high', 'medium', 'low']
+    }
+    let finalOut = []
+    const vulnIds = flags.vulnId
+    const ruleIds = flags.ruleId
 
-    if (benchmarkId) {
-      const { err: fibErr, data: fibData } = await findInBenchmark({ benchmarkId, rule })
-      if (fibErr) {
-        throw fibErr
+    const benchmarks = flags.benchmarkId
+    if (!benchmarks) {
+      for await (const stigId of vulnIds) {
+        const { data } = await getRule({ stigId, dataDir })
+        finalOut.push(data)
       }
-      if (json) {
-        console.log(JSON.stringify({ data: fibData }))
-        return
-      }
-      const { err: showErr, output } = await showResults({ results: fibData })
-      if (showErr) {
-        throw showErr
-      }
-      console.log(output)
-      return
-    }
-    // no benchmark id, search everything...
-    const { err: allErr, data: allData } = await findInAll({ rule })
-    if (allErr) {
-      throw allErr
-    }
 
-    const { err: showErr, output } = await showResults({ results: allData })
-    if (showErr) {
-      throw showErr
+      for await (const ruleId of ruleIds) {
+        const { data } = await getRule({ ruleId, dataDir })
+        finalOut.push(data)
+      }
+    } else {
+      let rules
+      for await (const benchmark of benchmarks) {
+        if (isNaN(benchmark)) {
+          const benchmarkTitle = benchmark
+          const { data } = await getRules({ dataDir, benchmarkTitle, severities })
+          finalOut = finalOut.concat(data)
+        } else {
+          const benchmarkIndex = benchmark
+          const { data } = await getRules({ dataDir, benchmarkIndex, severities })
+          finalOut = finalOut.concat(data)
+        }
+      }
     }
-    console.log(output)
+    console.log(await readOut({ dataDir, data: finalOut, json }))
   }
 }
 
-ReadCommand.description = `Read one or more rules from a specific benchmark.
-This command outputs the detailed text of a rule from within a benchmark.
+ReadCommand.description = `Read one or more rules
+This command outputs the detailed text of one or more desired rules. Alternatively, it can give you all the rules of one or more benchmarks which can be filtered by severity.
 
-First you need to get the ID of the benchmark you want
-
-Example
-$ stig ls
-
-╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-║ 89  │ Microsoft IIS 7                                         │ 16   │ 1    │ 1/26/2018  ║
-╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-
-Then you want to get the rule ID 
-
-Example
-$ stig ls 89
-
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ medium   ║
-║    │ servers isprohibited.                         │         │                 │          ║
-╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-
-Then to look at the text for this rule we have a few options
-
-Examples:
-$ stig read 89 -r V-2236
-$ stig read 89 -r SV-32632r4_rule
-$ stig read 89 -r 2
-
-You can pass in multiple '-r' flags to output multiple rules at once
-
-If you want to output ALL rules just omit the '-r' flag
-
-$ stig read 89
+While you can supply mutliple rule and STIG IDs together, and you can supply multiple benchmark IDs and titles together, you cannot query individual rule IDs AND benchmark IDs at the same time.
 `
 
 ReadCommand.examples = [
-  '$ stig read 89 -r V-2236',
-  '$ stig read 89 -r SV-32632r4_rule',
-  '$ stig read 89 -r 2',
-  '$ stig read 89'
-]
-
-ReadCommand.args = [
-  {
-    name: 'benchmarkId',
-    description: 'The benchmark id of the rule(s) you want to get content for.',
-    required: true
-  }
+  '$ stig read -v V-2236',
+  '$ stig read -r SV-32632r4_rule',
+  '$ stig read -r SV-32632r4_rule -v V-63323',
+  '$ stig read -b "Windows 10"',
+  '$ stig read -b "Windows 10" -b 2'
 ]
 
 ReadCommand.flags = {
-  rule: flags.string({
+  cats: flags.string({
+    description: 'Rule categories to show from. If no arg is supplied, everything is listed',
+    multiple: true,
+    char: 'c',
+    options: ['high', 'medium', 'low', 'all'],
+    default: 'all'
+  }),
+  vulnId: flags.string({
+    char: 'v',
+    description: 'Vulnerability ID',
+    multiple: true,
+    required: false
+  }),
+  ruleId: flags.string({
     char: 'r',
-    description: 'A valid STIG Identifier for the rule. It can be a Vulnerability or Rule ID. Multiple rules can be specified',
-    multiple: true
+    description: 'Rule ID',
+    multiple: true,
+    required: false
+  }),
+  benchmarkId: flags.string({
+    char: 'b',
+    description: 'Benchmark ID',
+    multiple: true,
+    required: false,
+    exclusive: ['r', 'v']
   }),
   json: flags.boolean(json())
 }

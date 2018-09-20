@@ -26,7 +26,7 @@ This utility also does not require internet to work. All publicly avaialable ben
 * [Introduction](#introduction)
 * [Usage](#usage)
 * [Commands](#commands)
-* [Examples](#examples)
+* [Uninstallation](#uninstallation)
 <!-- tocstop -->
 * [Visual Examples](#examples)
 
@@ -67,8 +67,9 @@ USAGE
 <!-- commands -->
 * [`stig autocomplete [SHELL]`](#stig-autocomplete-shell)
 * [`stig help [COMMAND]`](#stig-help-command)
+* [`stig init`](#stig-init)
 * [`stig ls [BENCHMARKID]`](#stig-ls-benchmarkid)
-* [`stig read BENCHMARKID`](#stig-read-benchmarkid)
+* [`stig read`](#stig-read)
 * [`stig update [CHANNEL]`](#stig-update-channel)
 
 ## `stig autocomplete [SHELL]`
@@ -109,7 +110,28 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.0/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.2/src/commands/help.ts)_
+
+## `stig init`
+
+Initialize the embedded STIG database
+
+```
+USAGE
+  $ stig init
+
+DESCRIPTION
+  This initializes the embedded database will all the STIG data. You MUST run this command in order first before using 
+  the rest of the CLI.
+
+  Rerunning this multiple times will delete the current db from disk and recreate it.
+
+  The reason stig cli does not ship with the DB preconfigured is to allow for easier auditing of bundled XCCDF files. 
+  You can be certain that the database is based entirely off the XML and hasn't been manipulated in any way other than 
+  for some slight formatting changes
+```
+
+_See code: [src/commands/init.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/init.js)_
 
 ## `stig ls [BENCHMARKID]`
 
@@ -120,11 +142,13 @@ USAGE
   $ stig ls [BENCHMARKID]
 
 ARGUMENTS
-  BENCHMARKID  OPTIONAL: List rules for a specific STIG Benchmark
+  BENCHMARKID  OPTIONAL: List rules for a specific STIG Benchmark. Supply the ID or title
 
 OPTIONS
-  -c, --cats=1|2|3  [default: 1,2,3] Rule categories to show from. If no arg is supplied, everything is listed
-  --json            Return results in JSON format
+  -c, --cats=high|medium|low|all  [default: all] Rule categories to show from. If no arg is supplied, everything is
+                                  listed
+
+  --json                          Return results in JSON format
 
 DESCRIPTION
   The 'ls' command is the entry point into reading STIG information.
@@ -133,93 +157,107 @@ DESCRIPTION
   Example output
 
   $ stig ls
-  ╔═════╤═════════════════════════════════════════════════════════╤══════╤══════╤════════════╗
-  ║ ID  │ Title                                                   │ Ver. │ Rel. │ Date       ║
-  ╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-  ║ 0   │ A10 Networks Application Delivery Controller (ADC) ALG  │ 1    │ 1    │ 4/27/2016  ║
-  ╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-  ║ 1   │ A10 Networks Application Delivery Controller (ADC) NDM  │ 1    │ 1    │ 4/27/2016  ║
-  ╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
 
-  And then if you want to list the rules inside of benchmarks supply an ID number
+    ID   Title                                                    Ver.  Rel.  Date
+
+    1    A10 Networks ADC ALG                                     1     1     Apr 15, 2016
+
+    2    A10 Networks ADC NDM                                     1     1     Apr 15, 2016
+
+
+  And then if you want to list the rules inside of benchmarks supply the ID number OR the title itself
 
   Example output
-  $ stig ls 0
-  ╔════╤═══════════════════════════════════════════════╤═════════╤═════════════════╤══════════╗
-  ║ ID │ Title                                         │ Vuln ID │ Rule ID         │ Severity ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 0  │ The A10 Networks ADC, when used for TLS       │ V-67957 │ SV-82447r1_rule │ medium   ║
-  ║    │ encryption anddecryption, must be configured  │         │                 │          ║
-  ║    │ to comply with the required TLSsettings in    │         │                 │          ║
-  ║    │ NIST SP 800-52.                               │         │                 │          ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 1  │ The A10 Networks ADC, when used to load       │ V-67959 │ SV-82449r1_rule │ low      ║
-  ║    │ balance webapplications, must enable external │         │                 │
+  $ stig ls 1
+    STIG ID  Rule ID                                                  Title    Severity
+
+    medium   The A10 Networks ADC must generate an alert to, at a     V-68105  SV-82595r1_rule
+             minimum, the ISSO and ISSM when threats identified by
+             authoritative sources (e.g., IAVMs or CTOs) are
+             detected.
+
+    high     The A10 Networks ADC must be a FIPS-compliant version.   V-68029  SV-82519r1_rule
+
+    medium   The A10 Networks ADC must protect against TCP SYN        V-68027  SV-82517r1_rule
+             floods by using TCP SYN Cookies.
+
+  When supplying the title make sure to wrap the title in quotes
+  Example output
+  $ stig ls 'Windows 10'
+    STIG ID  Rule ID                                                  Title    Severity
+
+    high     Administrative accounts must not be used with            V-78129  SV-92835r1_rule
+             applications that access the Internet, such as web
+             browsers, or with potential Internet sources, such as
+             email.
+
+    medium   Exploit Protection mitigations in Windows 10 must be     V-77269  SV-91965r2_rule
+             configured for wordpad.exe.
+
+    medium   Exploit Protection mitigations in Windows 10 must be     V-77267  SV-91963r2_rule
+             configured for wmplayer.exe.
+
+  If you want only certain severities you can pass the --cats/-c flag. By default it returns all the rules. If you do 
+  `-c high -c` low it will only return low and high.
+
+  Example output
+  $ stig ls 'Windows 10' -c high
+
+    STIG ID  Rule ID                                                  Title    Severity
+
+    high     Administrative accounts must not be used with            V-78129  SV-92835r1_rule
+             applications that access the Internet, such as web
+             browsers, or with potential Internet sources, such as
+             email.
+
+    high     Structured Exception Handling Overwrite Protection       V-68849  SV-83445r4_rule
+             (SEHOP) must be enabled.
+
+    high     Data Execution Prevention (DEP) must be configured to    V-68845  SV-83439r2_rule
+             at least OptOut.
 
 EXAMPLES
   stig ls
   stig ls 200
+  stig ls "Windows 10"
+  stig ls "Windows 10" -c low -c medium
 ```
 
 _See code: [src/commands/ls.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/ls.js)_
 
-## `stig read BENCHMARKID`
+## `stig read`
 
-Read one or more rules from a specific benchmark.
+Read one or more rules
 
 ```
 USAGE
-  $ stig read BENCHMARKID
-
-ARGUMENTS
-  BENCHMARKID  The benchmark id of the rule(s) you want to get content for.
+  $ stig read
 
 OPTIONS
-  -r, --rule=rule  A valid STIG Identifier for the rule. It can be a Vulnerability or Rule ID. Multiple rules can be
-                   specified
+  -b, --benchmarkId=benchmarkId   Benchmark ID
 
-  --json           Return results in JSON format
+  -c, --cats=high|medium|low|all  [default: all] Rule categories to show from. If no arg is supplied, everything is
+                                  listed
+
+  -r, --ruleId=ruleId             Rule ID
+
+  -v, --vulnId=vulnId             Vulnerability ID
+
+  --json                          Return results in JSON format
 
 DESCRIPTION
-  This command outputs the detailed text of a rule from within a benchmark.
+  This command outputs the detailed text of one or more desired rules. Alternatively, it can give you all the rules of 
+  one or more benchmarks which can be filtered by severity.
 
-  First you need to get the ID of the benchmark you want
-
-  Example
-  $ stig ls
-
-  ╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-  ║ 89  │ Microsoft IIS 7                                         │ 16   │ 1    │ 1/26/2018  ║
-  ╟─────┼─────────────────────────────────────────────────────────┼──────┼──────┼────────────╢
-
-  Then you want to get the rule ID 
-
-  Example
-  $ stig ls 89
-
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-  ║ 2  │ Installation of compilers on production web   │ V-2236  │ SV-32632r4_rule │ medium   ║
-  ║    │ servers isprohibited.                         │         │                 │          ║
-  ╟────┼───────────────────────────────────────────────┼─────────┼─────────────────┼──────────╢
-
-  Then to look at the text for this rule we have a few options
-
-  Examples:
-  $ stig read 89 -r V-2236
-  $ stig read 89 -r SV-32632r4_rule
-  $ stig read 89 -r 2
-
-  You can pass in multiple '-r' flags to output multiple rules at once
-
-  If you want to output ALL rules just omit the '-r' flag
-
-  $ stig read 89
+  While you can supply mutliple rule and STIG IDs together, and you can supply multiple benchmark IDs and titles 
+  together, you cannot query individual rule IDs AND benchmark IDs at the same time.
 
 EXAMPLES
-  $ stig read 89 -r V-2236
-  $ stig read 89 -r SV-32632r4_rule
-  $ stig read 89 -r 2
-  $ stig read 89
+  $ stig read -v V-2236
+  $ stig read -r SV-32632r4_rule
+  $ stig read -r SV-32632r4_rule -v V-63323
+  $ stig read -b "Windows 10"
+  $ stig read -b "Windows 10" -b 2
 ```
 
 _See code: [src/commands/read.js](https://github.com/defionscode/stig-cli/blob/v0.2.0/src/commands/read.js)_
@@ -233,47 +271,8 @@ USAGE
   $ stig update [CHANNEL]
 ```
 
-_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.1/src/commands/update.ts)_
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.2/src/commands/update.ts)_
 <!-- commandsstop -->
-
-# Examples
-
-**List All Available Benchmarks**
-
-```
-stig ls
-```
-
-![output of ls command](./static/ls-plain.png)
-
-**List Rules for a specific benchmark**
-
-```
-stig ls 3
-```
-
-![output of ls 3 command](./static/ls-benchmark.png)
-
-**List only CAT II rules for a specific benchmark**
-
-```
-stig ls 3 -c 3
-```
-
-![output of ls 3 -c 3 command](./static/ls-benchmark-cat3.png)
-
-**Read the content of a specific rule**
-
-Note: you can pass in multiple `-r` flags
-
-```
-stig read 3 -r V-8521
-stig read 3 -r 0
-stig read 3 -r SV-9018r3_rule
-```
-
-![output of read -r 0 command](./static/read.png)
-
 
 # Uninstallation
 If you want to uninstall this there is not yet a built in uninstaller but the following should accomplish what you want. You should do this even if you install via `npm`.

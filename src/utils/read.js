@@ -55,12 +55,3 @@ ${rDivider()}
   }
 }
 
-const divider = (char) => {
-  let hr = ''
-  const width = stdout.columns
-  debug(`Width of ${width}`)
-  for (let i = 0; i < width; i++) {
-    hr += char || '#'
-  }
-  return hr
-}
