@@ -95,7 +95,39 @@ const mkDb = ({ data, dataDir }) => {
 
         const stigIndex = stigEntry.$loki
 
-        for await (const rule of rules) {
+        if (Array.isArray(rules)) {
+          for await (const rule of rules) {
+            const {
+              err: errRule,
+              stigId,
+              ruleId,
+              severity,
+              title,
+              description,
+              fixText,
+              checkText
+            } = await getRuleData(rule)
+
+            if (errRule) {
+              debug('error in getting rule')
+              resolve({ err: errRule })
+            }
+
+            rulesDb.insert({
+              stigId,
+              ruleId,
+              severity,
+              title,
+              description,
+              fixText,
+              checkText,
+              stigIndex
+            })
+          }
+        } else {
+          // 'Citrix XenDesktop v7.x StoreFront'
+          // is a snowflake. It's rules attr is
+          // not an array.
           const {
             err: errRule,
             stigId,
@@ -105,7 +137,7 @@ const mkDb = ({ data, dataDir }) => {
             description,
             fixText,
             checkText
-          } = await getRuleData(rule)
+          } = await getRuleData(rules)
 
           if (errRule) {
             debug('error in getting rule')
