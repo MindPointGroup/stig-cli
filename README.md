@@ -3,10 +3,7 @@ stig
 
 A simple command line interface to read and interface with DISA STIG benchmarks
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/stig.svg)](https://npmjs.org/package/stig)
-[![CircleCI](https://circleci.com/gh/defionscode/stig-cli/tree/master.svg?style=shield)](https://circleci.com/gh/defionscode/stig-cli/tree/master)
-[![Codecov](https://codecov.io/gh/defionscode/stig-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/defionscode/stig-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/stig.svg)](https://npmjs.org/package/stig)
 [![License](https://img.shields.io/npm/l/stig.svg)](https://github.com/defionscode/stig-cli/blob/master/package.json)
 
