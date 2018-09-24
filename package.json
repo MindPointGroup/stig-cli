@@ -1,7 +1,7 @@
 {
   "name": "stig",
   "description": "A simple command line interface to read and interface with DISA STIG benchmarks",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "author": "Jonathan Davila @defionscode",
   "bin": {
     "stig": "./bin/run"
