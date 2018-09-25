@@ -29,6 +29,7 @@ const getRuleData = async rule => {
       '@_severity': severity,
       title,
       description,
+      version,
       fixtext,
       check
     } = Array.isArray(Rule) ? Rule[0] : Rule // sometimes it's an array but not usually
@@ -52,6 +53,7 @@ const getRuleData = async rule => {
       stigId,
       ruleId,
       severity,
+      version,
       title: title.replace(/(\r\n|\n|\r)/gm, ' '),
       description: VulnDiscussion && VulnDiscussion.replace(/(\r\n|\n|\r)/gm, ' '),
       fixText: fixText ? fixText.replace(/(\r\n|\n|\r)/gm, ' ') : '',

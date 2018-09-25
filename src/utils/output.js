@@ -31,6 +31,7 @@ const readOut = async ({ dataDir, data, json }) => {
         title,
         description,
         fixText,
+        version,
         checkText,
         stigIndex
       } = rule
@@ -45,6 +46,7 @@ const readOut = async ({ dataDir, data, json }) => {
         output.push(`${boldWhite('Rule')}: ${title}`)
         output.push(`${boldWhite('STIG ID')}: ${stigId}`)
         output.push(`${boldWhite('Rule ID')}: ${ruleId}`)
+        output.push(`${boldWhite('Version')}: ${version}`)
         output.push(`${boldWhite('Severity')}: ${severity}`)
         output.push(`\n${boldWhite('Description')}:\n${description}`)
         output.push(`\n${boldWhite('Check Text')}:\n${checkText}`)

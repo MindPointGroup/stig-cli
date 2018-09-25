@@ -19,14 +19,17 @@ class ReadCommand extends Command {
 
     const benchmarks = flags.benchmarkId
     if (!benchmarks) {
-      for await (const stigId of vulnIds) {
-        const { data } = await getRule({ stigId, dataDir })
-        finalOut.push(data)
+      if (vulnIds) {
+        for await (const stigId of vulnIds) {
+          const { data } = await getRule({ stigId, dataDir })
+          finalOut.push(data)
+        }
       }
-
-      for await (const ruleId of ruleIds) {
-        const { data } = await getRule({ ruleId, dataDir })
-        finalOut.push(data)
+      if (ruleIds) {
+        for await (const ruleId of ruleIds) {
+          const { data } = await getRule({ ruleId, dataDir })
+          finalOut.push(data)
+        }
       }
     } else {
       let rules
