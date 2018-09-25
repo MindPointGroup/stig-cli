@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  test:
+    macos:
+      xcode: "10.0"
+    working_directory: /Users/distiller/project
+    environment:
+    steps:
+      - checkout
+
+      - run:
+          name: Install Homebrew Dependencies
+          command: brew install nodejs --without-icu4c
+
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+
+      - run:
+          name: Install Node Dependencies
+          command: npm install
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+
+      - run:
+          name: Test
+          run: npm test
+
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - test
