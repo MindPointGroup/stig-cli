@@ -9,9 +9,9 @@ const ensureDataDir = dir => existsSync(dir) ? '' : mkdirSync(dir)
 class InitCommand extends Command {
   async run () {
     debug('start init')
+    this.parse(InitCommand)
     ensureDataDir(this.config.dataDir)
     cli.action.start('Initializing STIG Database, this can take up to a few minutes')
-    debug(this.config.dataDir)
     const { err } = await initDb(this.config.dataDir)
     if (err) {
       debug('error calling initDb')

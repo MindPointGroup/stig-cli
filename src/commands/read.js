@@ -1,6 +1,5 @@
 const { Command, flags } = require('@oclif/command')
 const { json } = require('../flags/format-output')
-const debug = require('debug')('command:read')
 const { getRule, getRules } = require('../utils/query')
 const { readOut, output } = require('../utils/output')
 
@@ -8,6 +7,10 @@ class ReadCommand extends Command {
   async run () {
     const dataDir = this.config.dataDir
     const { flags, args } = this.parse(ReadCommand)
+    if (!flags.vulnId && !flags.ruleId && !flags.benchmarkId) {
+      this.error('Missing required arguments, see `stig read --help`')
+      this.exit(1)
+    }
     const { json, cats } = flags
     let severities = cats
     if (cats === 'all') {

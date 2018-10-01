@@ -5,7 +5,6 @@ const {
 const { promisify } = require('util')
 const { join } = require('path')
 const debug = require('debug')('utils:index')
-const { tidy } = require('htmltidy')
 const parser = require('fast-xml-parser')
 const moment = require('moment')
 const { decode } = require('he')
@@ -73,13 +72,13 @@ const getBenchmarkData = async xml => {
       description,
       version
     } = xml
+    if (!description) debug(`${title} has no description`)
     const date = xml.status['@_date']
     const rawRel = xml['plain-text']['#text'].replace(/(\r\n|\n|\r)/gm, ' ')
     const regex = /^\D+(\d+).+$/
     const match = regex.exec(rawRel)
     const release = match[1]
-    const rules = xml.Group
-    if (!description) debug(`${title} has no description`)
+    const rules = Array.isArray(xml.Group) ? xml.Group : [xml.Group]
     debug('end getBenchmarkData()')
     return {
       title: title.replace(/(\r\n|\n|\r)/gm, ' '),
@@ -91,7 +90,6 @@ const getBenchmarkData = async xml => {
     }
   } catch (err) {
     debug(`error in getBenchmarkData()`)
-    debug(xml)
     return { err }
   }
 }
@@ -107,46 +105,36 @@ const getDataPaths = async () => {
   }
 }
 
-const sanitizeXml = async ({ xmlAsString }) => {
+const parseXmlStr = async xmlData => {
   try {
-    const pTidy = promisify(tidy)
-    const tidyOpts = {
-      doctype: 'omit',
-      'input-xml': true,
-      'output-xml': true
+    const parseOpts = {
+      parseAttributeValue: true,
+      cdataTagName: '_cdata',
+      ignoreAttributes: false
     }
-    const xmlData = await pTidy(xmlAsString, tidyOpts)
-    return { xmlData }
+    const data = parser.parse(xmlData.toString(), parseOpts)
+    if (!data) {
+      throw new Error('no data')
+    }
+    return { data }
   } catch (err) {
+    debug('parseXmlStr() err')
+    debug(err)
     return { err }
   }
 }
 
-const parseXmlStr = async (xmlData) => {
-  const parseOpts = {
-    parseAttributeValue: true,
-    cdataTagName: '_cdata',
-    ignoreAttributes: false
-  }
-  const data = parser.parse(xmlData, parseOpts)
-  if (!data) {
-    throw new Error('no data')
-  }
-
-  return { data }
-}
-
 const getXmlData = async ({ file }) => {
+  debug('getXmlData()')
   try {
     const rFile = promisify(readFile)
     const xmlAsString = await rFile(file)
-    const { err, xmlData } = await sanitizeXml({ xmlAsString })
-    if (err) throw err
-
-    const { data } = await parseXmlStr(xmlData)
+    const { data } = await parseXmlStr(xmlAsString)
     return { benchmark: data.Benchmark }
   } catch (err) {
     debug('error in parsing xml')
+    debug(err)
+
     return { err }
   }
 }
