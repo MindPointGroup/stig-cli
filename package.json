@@ -26,7 +26,6 @@
     "cli-ux": "^4.8.2",
     "fast-xml-parser": "^3.12.5",
     "he": "^1.1.1",
-    "htmltidy": "0.0.6",
     "lokijs": "^1.5.5",
     "moment": "^2.22.2",
     "node-fetch": "^2.2.0",
