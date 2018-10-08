@@ -1,11 +1,11 @@
 const fetch = require('node-fetch')
 const { join, basename } = require('path')
 const loki = require('lokijs')
+const { mkDirByPathSync } = require('./')
 const unzipper = require('unzipper')
 const {
   unlinkSync,
   existsSync,
-  mkdirSync,
   createWriteStream,
   createReadStream
 } = require('fs')
@@ -129,7 +129,7 @@ const download = async ({ cacheDir, url }) => {
     const archiveDir = join(cacheDir, 'zip_archives')
     const archivePath = join(archiveDir, fileName)
 
-    if (!existsSync(archiveDir)) mkdirSync(archiveDir)
+    if (!existsSync(archiveDir)) mkDirByPathSync(archiveDir)
 
     if (!existsSync(archivePath)) {
       await fetch(url)

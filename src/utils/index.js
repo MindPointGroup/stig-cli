@@ -1,9 +1,10 @@
 const {
+  mkdirSync,
   readFile,
   readdir
 } = require('fs')
 const { promisify } = require('util')
-const { join } = require('path')
+const { isAbsolute, join, resolve, sep } = require('path')
 const debug = require('debug')('utils:index')
 const parser = require('fast-xml-parser')
 const moment = require('moment')
@@ -139,7 +140,37 @@ const getXmlData = async ({ file }) => {
   }
 }
 
+const  mkDirByPathSync = targetDir => {
+  const initDir = isAbsolute(targetDir) ? sep : ''
+  const baseDir = __dirname
+
+  return targetDir.split(sep).reduce((parentDir, childDir) => {
+    const curDir = resolve(baseDir, parentDir, childDir)
+    try {
+      mkdirSync(curDir)
+    } catch (err) {
+      if (err.code === 'EEXIST') { // curDir already exists!
+        debug('mkDirByPathSync() path exists')
+        return curDir
+      }
+
+      // To avoid `EISDIR` error on Mac and `EACCES`-->`ENOENT` and `EPERM` on Windows.
+      if (err.code === 'ENOENT') { // Throw the original parentDir error on curDir `ENOENT` failure.
+        throw new Error(`EACCES: permission denied, mkdir '${parentDir}'`)
+      }
+
+      const caughtErr = ['EACCES', 'EPERM', 'EISDIR'].includes(err.code)
+      if ((!caughtErr || caughtErr) && targetDir === curDir) {
+        throw err // Throw if it's just the last created dir.
+      }
+    }
+
+    return curDir
+  }, initDir)
+}
+
 module.exports = {
+  mkDirByPathSync,
   getRuleData,
   getDataPaths,
   getXmlData,

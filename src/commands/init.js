@@ -1,10 +1,11 @@
 const { Command } = require('@oclif/command')
 const { initDb } = require('../utils/db')
 const { cli } = require('cli-ux')
+const { mkDirByPathSync } = require('../utils')
 const debug = require('debug')('command:init')
-const { existsSync, mkdirSync } = require('fs')
+const { existsSync } = require('fs')
 
-const ensureDataDir = dir => existsSync(dir) ? '' : mkdirSync(dir)
+const ensureDataDir = dir => existsSync(dir) ? '' : mkDirByPathSync(dir)
 
 class InitCommand extends Command {
   async run () {
