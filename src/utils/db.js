@@ -1,7 +1,6 @@
 const debug = require('debug')('utils:db')
 const { existsSync, unlinkSync } = require('fs')
 const loki = require('lokijs')
-const { promisify } = require('util')
 const {
   getDataPaths,
   getRuleData,
@@ -29,29 +28,29 @@ const getBmArr = async xmlDataArr => {
   debug('start getBmArr')
   const bmDataArr = []
   for await (const data of xmlDataArr) {
-      const {
-        err,
-        title,
-        description,
-        release,
-        version,
-        date,
-        rules
-      } = await getBenchmarkData(data)
+    const {
+      err,
+      title,
+      description,
+      release,
+      version,
+      date,
+      rules
+    } = await getBenchmarkData(data)
 
-      if (err) {
-        debug('error in getBenchmarkData')
-        return { err }
-      }
+    if (err) {
+      debug('error in getBenchmarkData')
+      return { err }
+    }
 
-      bmDataArr.push({
-        title: title.replace('STIG', '').replace(/sec.*tech.*impl.*de/gi, '').replace('()', '').trim(),
-        description,
-        release,
-        version,
-        date,
-        rules
-      })
+    bmDataArr.push({
+      title: title.replace('STIG', '').replace(/sec.*tech.*impl.*de/gi, '').replace('()', '').trim(),
+      description,
+      release,
+      version,
+      date,
+      rules
+    })
   }
   debug(`end getBmArr, data length of ${bmDataArr.length}`)
   return { bmDataArr }
@@ -86,11 +85,11 @@ const mkDb = ({ data, dataDir }) => {
         } = benchmark
 
         const stigEntry = stigsDb.insert({
-           title,
-           description,
-           release,
-           version,
-           date
+          title: `${title} v${version} r${release}`,
+          description,
+          release,
+          version,
+          date
         })
 
         const stigIndex = stigEntry.$loki
