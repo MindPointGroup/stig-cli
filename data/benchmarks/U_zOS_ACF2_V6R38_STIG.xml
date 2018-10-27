@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type='text/xsl' href='STIG_unclass.xsl'?><Benchmark xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="zOS_BMC_MAINVIEW_for_zOS_for_ACF2_STIG" xml:lang="en" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd" xmlns="http://checklists.nist.gov/xccdf/1.1"><status date="2017-09-15">accepted</status><title>z/OS BMC MAINVIEW for z/OS for ACF2 STIG</title><notice id="terms-of-use" xml:lang="en"></notice><reference href="http://iase.disa.mil"><dc:publisher>DISA</dc:publisher><dc:source>STIG.DOD.MIL</dc:source></reference><plain-text id="release-info">Release: 8 Benchmark Date: 27 Oct 2017</plain-text><version>6</version><Profile id="MAC-1_Classified"><title>I - Mission Critical Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-1_Public"><title>I - Mission Critical Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-1_Sensitive"><title>I - Mission Critical Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-2_Classified"><title>II - Mission Support Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-2_Public"><title>II - Mission Support Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-2_Sensitive"><title>II - Mission Support Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-3_Classified"><title>III - Administrative Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-3_Public"><title>III - Administrative Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Profile id="MAC-3_Sensitive"><title>III - Administrative Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-17067" selected="true" /><select idref="V-17452" selected="true" /><select idref="V-17947" selected="true" /><select idref="V-18011" selected="true" /><select idref="V-18014" selected="true" /></Profile><Group id="V-16932"><title>ZB000000</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-33835r1_rule" severity="medium" weight="10.0"><version>ZMVZA000</version><title>BMC MAINVIEW for z/OS installation data sets are not properly protected.</title><description>&lt;VulnDiscussion&gt;BMC MAINVIEW for z/OS installation data sets have the ability to use privileged functions and/or have access to sensitive data. Failure to properly restrict access to these data sets could result in violating the integrity of the base product which could result in compromising the operating system or sensitive data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000213</ident><ident system="http://iase.disa.mil/cci">CCI-002234</ident><fixtext fixref="F-315r1_fix">The IAO will ensure that update and allocate access to BMC MAINVIEW for z/OS installation data sets is limited to System Programmers only, and all update and allocate access is logged.  Read access can be given to all authorized users.
+
+The installing Systems Programmer will identify and document the product data sets and categorize them according to who will have update and alter access and if required that all update and allocate access is logged.  He will identify if any additional groups have update and/or alter access for specific data sets, and once documented he will work with the IAO to see that they are properly restricted to the ACP (Access Control Program) active on the system.
+
+Data sets to be protected will be: 
+SYS2.BMCVIEW.
+SYS3.BMCVIEW. (data sets that are not altered by product STCs, can be more specific)
+
+The following commands are provided as a sample for implementing data set controls: 
+
+$KEY(SYS2)
+BMCVIEW.- UID(&lt;syspaudt&gt;) R(A) W(L) A(L) E(A)
+BMCVIEW.- UID(&lt;tstcaudt&gt;) R(A) W(L) A(L) E(A)
+BMCVIEW.- UID(&lt;audtaudt&gt;) R(A) E(A)
+BMCVIEW.- UID(authorized users) R(A) E(A)
+BMCVIEW.- UID(&lt;audtaudt&gt;) R(A) E(A)
+BMCVIEW.- UID(MAINVIEW STCs) R(A) E(A)
+
+$KEY(SYS3)
+BMCVIEW.- UID(&lt;syspaudt&gt;) R(A) W(L) A(L) E(A)
+BMCVIEW.- UID(&lt;tstcaudt&gt;) R(A) W(L) A(L) E(A)
+BMCVIEW.- UID(&lt;audtaudt&gt;) R(A) E(A)
+BMCVIEW.- UID(authorized users) R(A) E(A)
+BMCVIEW.- UID(MAINVIEW STCs) R(A) E(A)</fixtext><fix id="F-315r1_fix" /><check system="C-3331r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	SENSITVE.RPT(MVZRPT)
+
+Automated Analysis
+Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	PDI(ZMVZ0000)
+
+Verify that the accesses to the BMC MAINVIEW for z/OS installation data sets are properly restricted.
+ 
+___	The ACF2 data set rules for the data sets restricts READ access to all authorized users.
+
+___	The ACF2 data set rules for the data sets restricts UPDATE and/or ALTER access to systems programming personnel.
+
+___	The ACF2 data set rules for the data sets specify that all (i.e., failures and successes) UPDATE and/or ALTER access are logged.</check-content></check></Rule></Group><Group id="V-17067"><title>ZB000001</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-37720r1_rule" severity="medium" weight="10.0"><version>ZMVZA001</version><title>BMC MAINVIEW for z/OS STC data sets are not properly protected.</title><description>&lt;VulnDiscussion&gt;BMC MAINVIEW for z/OS STC data sets have the ability to use privileged functions and/or have access to sensitive data.  Failure to properly restrict access to these data sets could result in violating the integrity of the base product which could result in compromising the operating system or sensitive data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;Responsibility&gt;Information Assurance Manager&lt;/Responsibility&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-001499</ident><fixtext fixref="F-263r1_fix">The IAO will ensure that update and allocate access to BMC MAINVIEW for z/OS STC data sets is limited to System Programmers and/or BMC MAINVIEW for z/OS’s STC(s) and/or batch user(s) only.  Read access can be given to auditors and authorized users.
+
+The installing Systems Programmer will identify and document the product data sets and categorize them according to who will have update and alter access and if required that all update and allocate access is logged.  He will identify if any additional groups have update and/or alter access for specific data sets, and once documented he will work with the IAO to see that they are properly restricted to the ACP (Access Control Program) active on the system.
+
+Data sets to be protected will be: 
+SYS3.BMCVIEW (data sets that are altered by the product’s STCs, this can be more specific)
+
+The following commands are provided as a sample for implementing data set controls: 
+
+$KEY(SYS3)
+BMCVIEW.- UID(&lt;syspaudt&gt;) R(A) W(A) A(A) E(A)
+BMCVIEW.- UID(&lt;tstcaudt&gt;) R(A) W(A) A(A) E(A)
+BMCVIEW.- UID(MAINVIEW STCs) R(A) W(A) A(A) E(A)
+BMCVIEW.- UID(&lt;audtaudt&gt;) R(A) E(A)
+BMCVIEW.- UID(authorize users) R(A) E(A)</fixtext><fix id="F-263r1_fix" /><check system="C-4646r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	SENSITVE.RPT(MVZSTC)
+
+Automated Analysis
+Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	PDI(ZMVZ0001)
+
+Verify that the accesses to the BMC MAINVIEW for z/OS STC data sets are properly restricted.
+ 
+___	The ACF2 data set rules for the data sets restricts READ access to auditors and authorized users.
+
+___	The ACF2 data set rules for the data sets restricts UPDATE and/or ALTER access to systems programming personnel.
+
+___	The ACF2 data set rules for the data sets restricts UPDATE and/or ALTER access to the BMC MAINVIEW for z/OS’s STC(s) and/or batch user(s).</check-content></check></Rule></Group><Group id="V-17452"><title>ZB000030</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-33838r2_rule" severity="medium" weight="10.0"><version>ZMVZA030</version><title>BMC Mainview for z/OS Started Task name must be properly identified and/or defined to the system ACP.</title><description>&lt;VulnDiscussion&gt;BMC Mainview for z/OS requires a started task that will be restricted to certain resources, datasets and other system functions. By defining the started task as a userid to the system ACP, It allows the ACP to control the access and authorized users that require these capabilities. Failure to properly control these capabilities, could compromise of the operating system environment, ACP, and customer data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000764</ident><fixtext fixref="F-399r2_fix">Ensure that a product's Started Task(s) is properly identified and/or defined to the System ACP. 
+
+If the product requires a Started Task, verify that it is properly defined to the System ACP with the proper attributes.
+
+Most installation manuals will indicate how the Started Task is identified and any additional attributes that must be specified.
+
+Example:
+
+SET LID
+INSERT MV$CAS STC NO-SMC
+INSERT MV$PAS STC NO-SMC
+INSERT MV$MVS STC NO-SMC   
+</fixtext><fix id="F-399r2_fix" /><check system="C-6194r3_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the following report produced by the ACF2 Data Collection:
+
+-       ACF2CMDS.RPT(ATTSTC)
+
+Insure that the logonids(s) for the BMC Mainview for z/OS started task(s) includes the following:
+
+STC
+NO-SMC
+</check-content></check></Rule></Group><Group id="V-17947"><title>ZB000020</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-46311r2_rule" severity="medium" weight="10.0"><version>ZMVZA020</version><title>BMC MAINVIEW resources must be properly defined and protected.</title><description>&lt;VulnDiscussion&gt;BMC MAINVIEW can run with sensitive system privileges, and potentially can circumvent system controls.  Failure to properly control access to product resources could result in the compromise of the operating system environment, and compromise the confidentiality of customer data.  Many utilities assign resource controls that can be granted to system programmers only in greater than read authority.  Resources are also granted to certain non systems personnel with read only authority.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000035</ident><ident system="http://iase.disa.mil/cci">CCI-002234</ident><fixtext fixref="F-18583r5_fix">The IAO will work with the systems programmer to verify that the following are properly specified in the ACP.
+
+(Note:  The resource type, resources, and/or resource prefixes identified below are examples of a possible installation.  The actual resource type, resources, and/or prefixes are determined when the product is actually installed on a system through the product’s installation guide and can be site specific.)
+
+Use BMC MAINVIEW Resources table in the zOS STIG Addendum.  This table lists the resources, access requirements, and logging requirement for BMC MAINVIEW.  Ensure the guidelines for the resource type, resources, and/or generic equivalent specified in the z/OS STIG Addendum are followed.
+
+The ACF2 resources as designated in the above table are defined with a default access of PREVENT.
+
+The ACF2 resource access authorizations restrict access to the appropriate personnel as designated in the above table.
+
+The following commands are provided as a sample for implementing resource controls:
+
+$KEY(BBM) TYPE(BMV)
+ssid.CN UID(autoaudt) ALLOW
+ssid.CN UID(dasdaudt) ALLOW
+ssid.CN UID(mqsaaudt) ALLOW
+ssid.CN UID(Mainview STCs) ALLOW
+ssid.CN UID(mvzread) ALLOW
+ssid.CN UID(mvzupdt) ALLOW
+ssid.CN UID(pcspaudt) ALLOW
+ssid.CN UID(syspaudt) ALLOW
+- UID(*) PREVENT</fixtext><fix id="F-18583r5_fix" /><check system="C-3887r2_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the following report produced by the ACF2 Data Collection and Data Set and Resource Data Collection:
+
+-	SENSITVE.RPT(ZMVZ0020)
+-	ACF2CMDS.RPT(RESOURCE) – Alternate report
+
+Automated Analysis
+Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	PDI(ZMVZ0020)
+
+Verify that the accesses to resources and/or generic equivalent are properly restricted according to the requirements specified in BMC MAINVIEW Resources table in the z/OS STIG Addendum.  If the following guidance is true, this is not a finding.
+
+___	The ACF2 resources are defined with a default access of PREVENT.
+
+___	The ACF2 resource access authorizations restrict access to the appropriate personnel.</check-content></check></Rule></Group><Group id="V-18011"><title>ZB000038</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-33844r1_rule" severity="medium" weight="10.0"><version>ZMVZA038</version><title>BMC Mainview for z/OS Resource Class will be defined or active in the ACP.</title><description>&lt;VulnDiscussion&gt;Failure to use a robust ACP to control a product could potentially compromise the integrity and availability of the MVS operating system and user data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000336</ident><ident system="http://iase.disa.mil/cci">CCI-002358</ident><fixtext fixref="F-198r1_fix">The IAO will use SAF security to define and protect the Products resouce class(es).
+
+Ensure that the following GSO CLASMAP record entry(ies) is (are) defined:
+
+CLASMAP.class RESOURCE(class) RSRCTYPE(type) ENTITYLN(39)
+
+Example:
+
+SET C(GSO)
+LIST CLASMAP.BMCVIEW
+INSERT CLASMAP.BMCVIEW ENTITYLN(39) RESOURCE(BMCVIEW) RSRCTYPE(BBM)
+
+F ACF2,REFRESH(CLASMAP)
+
+Ensure that the following GSO SAFDEF record entry(ies) is (are) defined:
+
+SAFDEF.ssid ID(BBCS) MODE(GLOBAL)REP RACROUTE(SUBSYS=ssid REQSTOR=-)
+
+Example:
+
+ACF
+SET C(GSO)
+LIST SAFDEF.ssid
+INSERT SAFDEF.ssid ID(BBCS) MODE(GLOBAL)REP RACROUTE(SUBSYS=ssid REQSTOR=-)
+
+F ACF2,REFRESH(SAFDEF)</fixtext><fix id="F-198r1_fix" /><check system="C-3632r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the following report produced by the ACF2 Data Collection:
+
+-	ACF2CMDS.RPT(ACFGSO)
+
+Ensure that the following GSO CLASMAP record entries are defined:
+
+CLASMAP.class RESOURCE(class) RSRCTYPE(type) ENTITYLN(39)
+
+Ensure that the following GSO SAFDEF record entries are defined:
+
+INSERT SAFDEF.ssid ID(BBCS) MODE(GLOBAL)REP -
+RACROUTE(SUBSYS=ssid REQSTOR=-)</check-content></check></Rule></Group><Group id="V-18014"><title>ZB000040</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-37806r1_rule" severity="medium" weight="10.0"><version>ZMVZA040</version><title>BMC MAINVIEW for z/OS configuration/parameter values are not specified properly.</title><description>&lt;VulnDiscussion&gt;BMC MAINVIEW for z/OS configuration/parameters controls the security and operational characteristics of products.  If these parameter values are improperly specified, security and operational controls may be weakened.  This exposure may threaten the availability of the product applications, and compromise the confidentiality of customer data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC Mainview for zOS</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC Mainview for zOS</dc:subject><dc:identifier>2093</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000035</ident><fixtext fixref="F-267r1_fix">The BMC MAINVIEW for z/OS Systems programmer will verify that any configuration/parameters that are required to control the security of the product are properly configured and syntactically correct.  Set the standard values for the BMC MAINVIEW for z/OS security parameters for the specific ACP environment along with additional IOA security parameters with standard values as documented below.
+
+Statement(values)
+ESMTYPE(AUTO|ACF2)</fixtext><fix id="F-267r1_fix" /><check system="C-11661r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC MAINVIEW for zOS for ACF2 STIG.xml" /><check-content>Refer to the Configuration Location dataset and member specified in the z/OS Dialog Management Procedures for BMC MAINVIEW for z/OS. 
+
+Automated Analysis
+Refer to the following report produced by the z/OS Data Collection:
+
+-	PDI(ZMVZ0040)
+
+The following keywords will have the specified values in the BMC MAINVIEW for z/OS security parameter member:
+
+Statement(values)
+ESMTYPE(AUTO|ACF2)</check-content></check></Rule></Group></Benchmark>

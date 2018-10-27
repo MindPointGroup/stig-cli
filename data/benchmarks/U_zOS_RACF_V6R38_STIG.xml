@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type='text/xsl' href='STIG_unclass.xsl'?><Benchmark xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" id="zOS_BMC_CONTROL-M_Restart_for_RACF_STIG" xml:lang="en" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd" xmlns="http://checklists.nist.gov/xccdf/1.1"><status date="2015-09-28">accepted</status><title>z/OS BMC CONTROL-M/Restart for RACF STIG</title><notice id="terms-of-use" xml:lang="en"></notice><reference href="http://iase.disa.mil"><dc:publisher>DISA</dc:publisher><dc:source>STIG.DOD.MIL</dc:source></reference><plain-text id="release-info">Release: 5 Benchmark Date: 23 Oct 2015</plain-text><version>6</version><Profile id="MAC-1_Classified"><title>I - Mission Critical Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-1_Public"><title>I - Mission Critical Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-1_Sensitive"><title>I - Mission Critical Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-2_Classified"><title>II - Mission Support Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-2_Public"><title>II - Mission Support Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-2_Sensitive"><title>II - Mission Support Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-3_Classified"><title>III - Administrative Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-3_Public"><title>III - Administrative Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Profile id="MAC-3_Sensitive"><title>III - Administrative Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-16932" selected="true" /><select idref="V-21592" selected="true" /></Profile><Group id="V-16932"><title>ZB000000</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-31832r2_rule" severity="medium" weight="10.0"><version>ZCTRR000</version><title>BMC CONTROL-M/Restart installation data sets will be not properly protected.</title><description>&lt;VulnDiscussion&gt;BMC CONTROL-M/Restart installation data sets have the ability to use privileged functions and/or have access to sensitive data.  Failure to properly restrict access to these data sets could result in violating the integrity of the base product which could result in compromising the operating system or sensitive data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;DCSL-1, ECAR-1, ECAR-2, ECCD-1, ECCD-2&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC CONTROL-M/Restart</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC CONTROL-M/Restart</dc:subject><dc:identifier>2000</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000213</ident><ident system="http://iase.disa.mil/cci">CCI-002234</ident><fixtext fixref="F-3268r5_fix">The IAO will ensure that WRITE and/or greater access to BMC CONTROL-M/Restart installation data sets are limited to System Programmers only, and all WRITE and/or greater access is logged.  READ access can be given to auditors, BMC users, and BMC STCs and/or batch users.  All failures and successful WRITE and/or greater accesses are logged.
+
+The installing Systems Programmer will identify and document the product data sets and categorize them according to who will have update and alter access and if required that all update and allocate access is logged.  He will identify if any additional groups have update and/or alter access for specific data sets, and once documented he will work with the IAO to see that they are properly restricted to the ACP (Access Control Program) active on the system.
+
+(Note:  The data sets and/or data set prefixes identified below are examples of a possible installation.  The actual data sets and/or prefixes are determined when the product is actually installed on a system through the product’s installation guide and can be site specific.)
+
+Data sets to be protected will be: 
+SYS2.IOA.*.CTRO.
+
+The following commands are provided as a sample for implementing data set controls: 
+
+ad 'SYS2.IOA.*.CTRO.**' uacc(none) owner(sys2) -
+	audit(success(update) failures(read)) -
+	data('Vendor DS Profile: BMC CONTROL-M/Restart')
+pe 'SYS2.IOA.*.CTRO.**' id(&lt;syspaudt&gt;) acc(a)
+pe 'SYS2.IOA.*.CTRO.**' id(&lt;audtaudt&gt; &lt;bmcuser&gt;) acc(r)
+pe 'SYS2.IOA.*.CTRO.**' id(CONTROLR) acc(r)
+
+setr generic(dataset) refresh</fixtext><fix id="F-3268r5_fix" /><check system="C-6186r2_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC CONTROL-M_Restart for RACF STIG.xml" /><check-content>Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	SENSITVE.RPT(CTRRPT)
+
+Automated Analysis
+Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	PDI(ZCTR0000)
+
+Verify that the accesses to the BMC CONTROL-M/Restart installation data sets are properly restricted.  If the following guidance is true, this is not a finding.
+ 
+___	The RACF data set access authorizations restrict READ access to auditors, BMC users, and BMC STCs and/or batch users.
+
+___	The RACF data set access authorizations restrict WRITE and/or greater access to systems programming personnel.
+
+___	The RACF data set access authorizations specify that all (i.e., failures and successes) WRITE and/or greater access are logged.
+
+___	The RACF data set access authorizations specify UACC(NONE) and NOWARNING.</check-content></check></Rule></Group><Group id="V-21592"><title>ZB000002</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-32219r4_rule" severity="medium" weight="10.0"><version>ZCTRR002</version><title>BMC CONTROL-M/Restart Archived Sysout data sets must be properly protected.</title><description>&lt;VulnDiscussion&gt;BMC CONTROL-M/Restart Archived Sysout data sets have the ability to use privileged functions and/or have access to sensitive data.  Failure to properly restrict access to these data sets could result in violating the integrity of the base product which could result in compromising the operating system or sensitive data.&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;Information Assurance Officer&lt;/Responsibility&gt;&lt;Responsibility&gt;Systems Programmer&lt;/Responsibility&gt;&lt;IAControls&gt;DCSL-1, ECAR-1, ECAR-2, ECCD-1, ECCD-2&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target BMC CONTROL-M/Restart</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>BMC CONTROL-M/Restart</dc:subject><dc:identifier>2000</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000213</ident><fixtext fixref="F-3243r5_fix">Ensure that WRITE and/or greater access to BMC CONTROL-M/Restart Archived Sysout data sets are limited to production control scheduling personnel, scheduled batch users, System Programmers, and the BMC STCs and/or batch users only. READ access can be given to auditors and BMC users.
+
+The installing Systems Programmer will identify and document the product data sets and categorize them according to who will have update and alter access and if required that all update and allocate access is logged. 
+
+The installing Systems Programmer will identify if any additional groups have update and/or alter access for specific data sets, and once documented will work with the IAO to see that they are properly restricted to the ACP (Access Control Program) active on the system.
+
+(Note: The data sets and/or data set prefixes identified below are examples of a possible installation. The actual data sets and/or prefixes are determined when the product is actually installed on a system through the product’s installation guide and can be site specific.)
+
+Data sets to be protected will be: 
+CTRSYS.
+
+The following commands are provided as a sample for implementing data set controls: 
+
+ad 'CTRSYS.**' uacc(none) owner(CTRSYS) -
+data('BMC CONTROL-M/Restart Archived Sysout')
+pe 'CTRSYS.**' id(CONTROLM CONTDAY) acc(a)
+pe 'CTRSYS.**' id(&lt;syspaudt&gt; &lt;autoaudt&gt; &lt;pcspaudt&gt;) acc(a)
+pe 'CTRSYS.**' id(&lt;audtaudt&gt;) acc(r)
+pe 'CTRSYS.**' id(&lt;bmcuser&gt;) acc(r)
+setr generic(dataset) refresh   
+</fixtext><fix id="F-3243r5_fix" /><check system="C-3334r5_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_zOS BMC CONTROL-M_Restart for RACF STIG.xml" /><check-content>Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	SENSITVE.RPT(CTRUSER)
+
+Automated Analysis
+Refer to the following report produced by the Data Set and Resource Data Collection:
+
+-	PDI(ZCTR0002)
+
+Verify that the accesses to the BMC CONTROL-M/Restart Archived Sysout data sets are properly restricted. If the following guidance is true, this is not a finding.
+
+___	The RACF data set access authorizations restrict READ access to auditors and BMC users.
+
+___	The RACF data set access authorizations restrict WRITE and/or greater access to Production Control Scheduling personnel, scheduled batch user(s), systems programming personnel, and the BMC STCs and/or batch users.
+
+___	The RACF data set access authorizations specify UACC(NONE) and NOWARNING.</check-content></check></Rule></Group></Benchmark>

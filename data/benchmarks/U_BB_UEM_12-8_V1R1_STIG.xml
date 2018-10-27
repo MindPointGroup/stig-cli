@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type='text/xsl' href='STIG_unclass.xsl'?><Benchmark xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cpe="http://cpe.mitre.org/language/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:dc="http://purl.org/dc/elements/1.1/" id="BB_UEM_12-8_STIG" xml:lang="en" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.1 http://nvd.nist.gov/schema/xccdf-1.1.4.xsd http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd" xmlns="http://checklists.nist.gov/xccdf/1.1"><status date="2018-08-27">accepted</status><title>BlackBerry UEM 12.8 Security Technical Implementation Guide</title><description>This Security Technical Implementation Guide is published as a tool to improve the security of Department of Defense (DoD) information systems. The requirements are derived from the National Institute of Standards and Technology (NIST) 800-53 and related documents. Comments or proposed revisions to this document should be sent via email to the following address: disa.stig_spt@mail.mil.</description><notice id="terms-of-use" xml:lang="en"></notice><reference href="http://iase.disa.mil"><dc:publisher>DISA</dc:publisher><dc:source>STIG.DOD.MIL</dc:source></reference><plain-text id="release-info">Release: 1 Benchmark Date: 23 Aug 2018</plain-text><version>1</version><Profile id="MAC-1_Classified"><title>I - Mission Critical Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-1_Public"><title>I - Mission Critical Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-1_Sensitive"><title>I - Mission Critical Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-2_Classified"><title>II - Mission Support Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-2_Public"><title>II - Mission Support Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-2_Sensitive"><title>II - Mission Support Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-3_Classified"><title>III - Administrative Classified</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-3_Public"><title>III - Administrative Public</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Profile id="MAC-3_Sensitive"><title>III - Administrative Sensitive</title><description>&lt;ProfileDescription&gt;&lt;/ProfileDescription&gt;</description><select idref="V-81023" selected="true" /><select idref="V-81025" selected="true" /><select idref="V-81027" selected="true" /><select idref="V-81057" selected="true" /><select idref="V-81063" selected="true" /><select idref="V-81069" selected="true" /><select idref="V-81071" selected="true" /><select idref="V-81073" selected="true" /><select idref="V-81075" selected="true" /></Profile><Group id="V-81023"><title>PP-MDM-311056</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95735r1_rule" severity="low" weight="10.0"><version>BUEM-12-806300</version><title>The BlackBerry UEM 12.8 server must be configured to display the required DoD warning banner upon administrator logon.</title><description>&lt;VulnDiscussion&gt;Note: The advisory notice and consent warning message is not required if the general purpose OS or network device displays an advisory notice and consent warning message when the administrator logs on to the general purpose OS or network device prior to accessing the BlackBerry UEM 12.8 server or MDM server platform.
+
+Before granting access to the system, the BlackBerry UEM 12.8 server/server platform is required to display the DoD-approved system use notification message or banner that provides privacy and security notices consistent with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance. This ensures the legal requirements for auditing and monitoring are met.
+
+The approved DoD text must be used as specified in the KS referenced in DoD 8500.01.
+
+The non-bracketed text below must be used without any changes as the warning banner. 
+
+[A. Use this banner for desktops, laptops, and other devices accommodating banners of 1300 characters. The banner shall be implemented as a click-through banner at logon (to the extent permitted by the operating system), meaning it prevents further activity on the information system unless and until the user executes a positive action to manifest agreement by clicking on a box indicating “OK.”]
+
+You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only. 
+By using this IS (which includes any device attached to this IS), you consent to the following conditions: 
+-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations. 
+-At any time, the USG may inspect and seize data stored on this IS. 
+-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose. 
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy. 
+-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+SFR ID: FMT_SMF.1.1(2) d&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000048</ident><fixtext fixref="F-87857r1_fix">On the BlackBerry UEM 12.8, do the following:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab on the left pane.
+2. Expand the "General" settings tab on the left pane.
+3. Select "Login notices" from the menu in the left pane.
+4. Click the "pencil icon" (upper right corner) to edit the "Login notice".
+5. Select the check box next to "Enable a login notice for the management console".
+6. In the "Enable a login notice for the management console" field, type the DoD banner found in the VulDiscussion.
+7. Click "Save". 
+
+If the self-service portal is used in the organization, complete steps 8-10.
+8. Select the check box next to "Enable a login notice for the self-service console".
+9. In the "Enable a login notice for the self-service console" field, type the DoD banner found in the VulDiscussion.
+10. Click "Save".</fixtext><fix id="F-87857r1_fix" /><check system="C-80739r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM 12.8 server documentation and configuration settings to determine if the warning banner is using the appropriate designated wording. 
+
+On the BlackBerry UEM 12.8, do the following:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab on the left pane.
+2. Expand the "General" settings tab on the left pane.
+3. Select "Login notices" from the menu in the left pane.
+4. Verify the check box next to "Enable a login notice for the management console" is checked.
+5. Verify the console login notice text exactly matches the VulDiscussion text. 
+6. Verify the check box next to "Enable a login notice for the self-service console" is checked if the self-service portal is used at the site.
+7. Verify the self-service console login notice text exactly matches the VulDiscussion text. 
+
+Alternately, have the administrator log in to the UEM console to view the warning banner.
+
+If the console notice wording does not exactly match the VulDiscussion text, this is a finding.</check-content></check></Rule></Group><Group id="V-81025"><title>PP-MDM-311058</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95737r1_rule" severity="medium" weight="10.0"><version>BUEM-12-806500</version><title>The BlackBerry UEM 12.8 server must be configured to have at least one user in the following Administrator roles: UEM Security Administrator, Auditor, and one or more Site Custom Administrator or UEM predefined enterprise/help desk roles.</title><description>&lt;VulnDiscussion&gt;Having several administrative roles for MDM server supports separation of duties. This allows administrator-level privileges to be granted granularly, such as giving application management privileges to one group and security policy privileges to another group. This helps prevent administrators from intentionally or inadvertently altering other settings and configurations they may not understand or approve of, which can weaken overall security and increase the risk of compromise.
+
+- Server primary administrator: Responsible for server installation, initial configuration, and maintenance functions. Responsible for the setup and maintenance of security configuration administrator and auditor accounts. Responsible for the maintenance of applications in the MAS. (Called "Security Administrator" in UEM.)
+- Security configuration administrator: Responsible for security configuration of the server, defining device user groups, setup and maintenance of device user group administrator accounts, and defining privileges of device user group administrators. (UEM Enterprise Administrator, Help Desk Administrator, or custom roles can be used for this role.)
+- Device user group administrator: Responsible for maintenance of mobile device accounts, including setup, change of account configurations, and account deletion. Responsible for defining which apps user groups or individual users have access to in the MAS. Can only perform administrative functions assigned by the security configuration administrator. (UEM Enterprise Administrator, Help Desk Administrator, or custom roles can be used for this role.)
+- Auditor: Responsible for reviewing and maintaining server and mobile device audit logs. (These is no predefined role in UEM.)
+
+SFR ID: FMT_SMR.1.1(1)&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000123</ident><ident system="http://iase.disa.mil/cci">CCI-000169</ident><ident system="http://iase.disa.mil/cci">CCI-000366</ident><fixtext fixref="F-87859r1_fix">On the BlackBerry UEM 12.8, do the following:
+
+Using the procedures below:
+- Assign at least one user to the UEM Security Administrator role. Few administrators should be assigned to this role. 
+Note: UEM automatically restricts the following functions to only the Security Administrator: Full permissions to manage the BlackBerry Enterprise Solution. Capability to create and edit roles.
+- Define an "Auditor" role (see the VulDiscussion for role functions). Assign at least one user (UEM administrator) to the role. The role should include only the following UEM permissions:
+** View audit information
+**Delete BlackBerry Dynamics audit log files
+**View and export BlackBerry Dynamics audit log files
+**View audit settings
+**Edit audit settings and purge data** Edit logging settings
+- Define a site custom administrator roles or UEM predefined enterprise/help desk roles as needed to administer device policies and user accounts (for example, see the Security Configuration Administrator and Device User Group Administrator in the VulDiscussion). Assign users to the roles, as required. These roles should be used for day-to-day management of user accounts, group accounts, and profiles.
+
+To set up specific roles, do the following:
+1. Select "roles" in the left pane.
+2. Select "add a role" on the top right.
+3. Assign appropriate name and functions to the role. 
+4. Click "Save".
+
+To assign users or groups to a role, do the following:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab at the top of the screen.
+2. Expand the "General" settings tab on the left pane.
+3. Expand the "Administrators" tab on the left pane.
+
+To assign a role to a user:
+1. Click "Users".
+2. Click the "Add an administrator" icon (upper right corner).
+3. If necessary, search for a user account.
+4. Click the name of the user account.
+5. In the Role drop-down list, click the role that you want to add.
+6. Click "Save".
+
+To assign a role to a group:
+1. Click "Groups".
+2. Click the "Add an administrator icon" (upper right corner).
+3. If necessary, search for a user group.
+4. Click the name of the user group.
+5. In the Role drop-down list, click the role that you want to add.
+6. Click "Save".
+
+Note: The intent of the requirement is that there be separate people performing each administrator role. The exact name of the role is not important.</fixtext><fix id="F-87859r1_fix" /><check system="C-80741r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM 12.8 server configuration settings, and verify the server is configured with the Administrator roles: 
+a. UEM Security Administrator
+b. Auditor
+c. One or more Site Custom Administrator or UEM predefined enterprise/help desk roles
+
+Note: The exact name of the role is not important. Each role should include functions close to the role descriptions listed in the VulDiscussion.
+
+Note: The intent of the requirement is that there be separate people performing each administrator role; few users are assigned to the UEM Security Administrator role; the auditor role is limited to only authorized permissions; and day-to-day management of user accounts, group accounts, and profiles are performed from site specific custom administrator roles or UEM predefined enterprise/help desk roles instead of the UEM Security Administrator.
+
+On the BlackBerry UEM 12.8, do the following:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab at the top of the screen.
+2. Expand the "General" settings tab on the left pane.
+3. Expand the "Administrators" tab on the left pane.
+4. Select the "Roles" tab on the left pane.
+5. Verify there is at least one user assigned to each of the following roles:
+
+a. UEM Security Administrator
+b. Auditor
+c. One or more Site Custom Administrator or UEM predefined enterprise/help desk roles
+
+Verify the auditor role function is limited to only reviewing and maintaining server and mobile device audit logs as follows:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab at the top of the screen.
+2. Expand the "Administrators" tab on the left pane.
+3. Select the "Roles" tab on the left pane.
+4. Click the "Auditor" role.
+5. Verify the role only has the following permissions assigned:
+- View audit information
+- Delete BlackBerry Dynamics audit log files
+- View and export BlackBerry Dynamics audit log files
+- View audit settings
+- Edit audit settings and purge data
+- Edit logging settings
+
+Talk to the UEM Security Administrator and verify custom administrator roles/UEM predefined enterprise/help desk roles are used for day-to-day management of user accounts, group accounts, and profiles.
+
+If at least one user is not associated with the UEM Security Administrator, Auditor, and one or more site custom administrator roles/UEM predefined enterprise/help desk roles, this is a finding.
+
+If the auditor role has more permissions than authorized, this is a finding.
+
+If day-to-day management of user accounts, group accounts, and profiles is primarily performed by UEM Security Administrators instead of one or more site custom administrator roles/UEM predefined enterprise/help desk roles, this is a finding.</check-content></check></Rule></Group><Group id="V-81027"><title>PP-MDM-314002</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95739r1_rule" severity="medium" weight="10.0"><version>BUEM-12-806700</version><title>The BlackBerry UEM 12.8 server must be configured to leverage the MDM platform user accounts and groups for MDM server user identification and authentication.</title><description>&lt;VulnDiscussion&gt;A comprehensive account management process that includes automation helps to ensure the accounts designated as requiring attention are consistently and promptly addressed. If an attacker compromises an account, the entire MDM server infrastructure is at risk. Providing automated support functions for the management of accounts will ensure only active accounts will be granted access with the proper authorization levels. These objectives are best achieved by configuring the BlackBerry UEM 12.8 server to leverage an enterprise authentication mechanism (e.g., Microsoft Active Directory Kerberos).
+
+SFR ID: FIA&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000366</ident><ident system="http://iase.disa.mil/cci">CCI-002226</ident><ident system="http://iase.disa.mil/cci">CCI-002227</ident><fixtext fixref="F-87861r1_fix">On the BlackBerry UEM 12.8, do the following:
+
+Configure constrained delegation for the Microsoft Active Directory account to support single sign-on:
+
+1. Log in to the BlackBerry UEM 12.8 host server and use the Windows Server ADSI Edit tool to add the following SPNs for BES12 to the Microsoft Active Directory account:
+- HTTP/&lt;host_FQDN_or_pool_name&gt; (for example, HTTP/domain123.example.com)
+- BASPLUGIN111/&lt;host_FQDN_or_pool_name&gt; (for example, BASPLUGIN111/domain123.example.com)
+Note:
+- If you configured high availability for the management consoles in a UEM domain, specify the pool name. Otherwise, specify the FQDN of the computer that hosts the management console.
+- Verify that no other accounts in the Microsoft Active Directory forest have the same SPNs.
+2. Open Microsoft Active Directory Users and Computers.
+3. In the Microsoft Active Directory account properties, on the "Delegation" tab, select the following options:
+- Trust this user for delegation to specified services only
+- Use Kerberos only
+4. Add the SPNs from step 1 to the list of services.
+
+Configure single sign-on for UEM:
+Note: 
+- When you configure single sign-on for UEM, you configure it for the management console and UEM Self-Service.
+- If you enable single sign-on for multiple Microsoft Active Directory connections, verify that there are no trust relationships between the Microsoft Active Directory forests.
+1. Log in to the BlackBerry UEM 12.8 console and select the "Settings” tab at the left pane.
+2. Click the "External integration" tab on the left pane.
+3. Click "Company directory".
+4. In the Configured directory connections section, click the name of a Microsoft Active Directory connection.
+5. On the "Authentication" tab, select the check box next to "Enable Windows single sign-on".
+6. Click "Save".
+7. Click "Save" on popup window.
+Note: UEM validates the information for Microsoft Active Directory authentication. If the information is invalid, UEM prompts you to specify the correct information.
+8. Click "Close".
+9. Restart the UEM services on each server that hosts a UEM instance.</fixtext><fix id="F-87861r1_fix" /><check system="C-80743r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM 12.8 server configuration settings, and verify the server is configured to leverage the MDM Platform user accounts and groups for BlackBerry UEM 12.8 server user identification and authentication.
+
+On the BlackBerry UEM 12.8, do the following:
+1. Navigate to the BlackBerry UEM 12.8 console.
+2. Verify the BlackBerry UEM 12.8 does not prompt for additional authentication before opening the UEM console.
+
+If the BlackBerry UEM 12.8 server prompts for additional authentication before opening the UEM console, this is a finding.</check-content></check></Rule></Group><Group id="V-81057"><title>PP-MDM-311046</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95769r1_rule" severity="medium" weight="10.0"><version>BUEM-12-807300</version><title>The BlackBerry UEM 12.8 server must configure the MDM Agent/platform to enable the DoD required device enrollment restrictions allowed for enrollment [specific device model] (if function is not automatically implemented during MDM server install).</title><description>&lt;VulnDiscussion&gt;Good configuration management of a mobile device is a key capability for maintaining the mobile device’s security baseline. Restricting network access to only authorized devices is a key configuration management attribute. Device type is a key way to specify mobile devices that can be adequately secured.
+
+SFR ID: FMT_SMF.1.1(2) b,
+FIA_ENR_EXT.1.2&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000015</ident><fixtext fixref="F-87863r1_fix">On the BlackBerry UEM 12.8, do the following:
+
+1. Log in to the BlackBerry UEM 12.8 console and select the "Policies and profiles” tab on the left pane.
+2. Expand the Activation profiles from the menu in the left pane.
+3. Select the Activation profile to be modified.
+4. Select the "pencil" icon to edit the profile.
+5. Select the "Settings" tab.
+6. Select each supported operating system tab.
+7. Select "Allow selected device models" in the "Device model restrictions" field, using the drop-down menu.
+8. Select the edit button in the "Allowed device models" field.
+9. Using the popup menu, select the required model and press the "-&gt;"arrow icon to add the selection to the "selected" window.
+10. Once all models are selected, click "Save".
+11. Click "Save".</fixtext><fix id="F-87863r1_fix" /><check system="C-80745r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM 12.8 server documentation and configuration settings to determine if the warning banner is using the appropriate designated wording. 
+
+On the BlackBerry UEM 12.8, do the following:
+1. Log in to the BlackBerry UEM 12.8 console and select the "Policies and profiles” tab on the left pane.
+2. Expand the Activation profiles from the menu in the left pane.
+3. Select the Activation Profile to be reviewed.
+4. Select the "Settings" tab.
+5. Select each supported operating system tab and perform the following:
+6. Confirm that "Allow selected device models" is selected in the "Device model restrictions" field.
+7. Verify that the devices listed in the "Allowed device models" field match the list provided by the administrator.
+
+If the "Allow selected device models" is not displayed in the "Device model restrictions" field or the devices listed in the "Allowed device models" field do not match the list provided by the administrator, this is a finding.</check-content></check></Rule></Group><Group id="V-81063"><title>PP-MDM-311047</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95775r1_rule" severity="medium" weight="10.0"><version>BUEM-12-807800</version><title>The BlackBerry UEM 12.8 server or platform must be configured to initiate a session lock after a 15-minute period of inactivity.</title><description>&lt;VulnDiscussion&gt;A session time-out lock is a temporary action taken when a user (a MDM system administrator) stops work and moves away from the immediate physical vicinity of the information system but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their application session prior to vacating the vicinity, applications need to be able to identify when a user's application session has idled and take action to initiate the session lock.
+
+The session lock is implemented at the point where session activity can be determined and/or controlled. This is typically at the operating system level and results in a system lock but may be at the application level where the application interface window is secured instead.
+
+SFR ID: FMT_SMF.1.1(2) b&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000185</ident><ident system="http://iase.disa.mil/cci">CCI-000366</ident><ident system="http://iase.disa.mil/cci">CCI-001310</ident><ident system="http://iase.disa.mil/cci">CCI-002450</ident><fixtext fixref="F-87865r1_fix">On the BlackBerry UEM, do the following:
+1. Log in to the BlackBerry UEM host server and navigate to “C:\BlackBerry\BlackBerry Configuration Tool 1.4.0\BlackBerry UEMConfigTool.exe" to launch the BlackBerry UEM Configuration Tool.
+Note: If the BlackBerry UEM Configuration Tool was not installed in the default directory, locate the directory with the executable file to launch the application.
+2. Select the "BlackBerry UEM console timeout interval" radio button.
+3. Click "Next".
+4. Click "Validate" to verify the Database information.
+5. In the "Session timeout (seconds)" field enter "900" or less. 
+6. Select the check box next to "Automatically Restart Services".
+7. Click "Update".
+8. Verify that the message "BlackBerry UEM services successfully restarted" is displayed when the process is completed.
+Note: If the services do not restart automatically, restart the services manually.
+9. Click "Quit" to exit the application.
+
+Note: If the BlackBerry UEM Configuration Tool is not installed on the host system, download and install the tool on the host server.</fixtext><fix id="F-87865r1_fix" /><check system="C-80747r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM server configuration to determine whether the system is locked after "15" minutes. 
+
+On the BlackBerry UEM, do the following:
+1. Log in to the BlackBerry UEM host server and navigate to “C:\BlackBerry\BlackBerry Configuration Tool 1.4.0\BESConfigTool.exe" and launch the BlackBerry UEM Configuration Tool.
+Note: If the BlackBerry UEM Configuration Tool was not installed in the default directory, locate the directory with the executable file to launch the application.
+2. Select the "BlackBerry UEM console timeout interval" radio button.
+3. Click "Next".
+4. Click "Validate" to verify the Database information.
+5. Verify the "Session timeout (seconds)" field is populated with "900" or less. 
+6. Click "Quit" to exit the application.
+
+Alternately, clock the time on a server to validate that it is correctly enforcing the time period.
+
+If the "Session timeout (seconds)" field is not populated with "900" or less, this is a finding.</check-content></check></Rule></Group><Group id="V-81069"><title>PP-MDM-331004</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95781r1_rule" severity="medium" weight="10.0"><version>BUEM-12-808700</version><title>The BlackBerry UEM server platform must be protected by a DoD-approved firewall.</title><description>&lt;VulnDiscussion&gt;Most information systems are capable of providing a wide variety of functions and services. Some of the functions and services provided by default may not be necessary to support essential organizational operations. Unneeded services and processes provide additional threat vectors and avenues of attack to the information system. The BlackBerry UEM server is a critical component of the mobility architecture and must be configured to enable only those ports, protocols, and services (PPS) necessary to support functionality. All others must be expressly disabled or removed. A DoD-approved firewall implements the required network restrictions. A host-based firewall is appropriate where the BlackBerry UEM server runs on a standalone platform. Network firewalls or other architectures may be preferred where the BlackBerry UEM server runs in a cloud or virtualized solution.
+
+SFR ID: FMT_SMF.1.1(2) b&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-002696</ident><fixtext fixref="F-87867r1_fix">Install a DoD-approved firewall.</fixtext><fix id="F-87867r1_fix" /><check system="C-80749r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Review the BlackBerry UEM server platform configuration to determine whether a DoD-approved firewall is installed or if the platform operating system provides a firewall service that can restrict both inbound and outbound traffic by TCP/UDP port and IP address.
+
+If there is not a host-based firewall present on the BlackBerry UEM server platform, this is a finding.</check-content></check></Rule></Group><Group id="V-81071"><title>PP-MDM-331005</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95783r1_rule" severity="medium" weight="10.0"><version>BUEM-12-808800</version><title>The firewall protecting the BlackBerry UEM server platform must be configured to restrict all network traffic to and from all addresses with the exception of ports, protocols, and IP address ranges required to support BlackBerry UEM server and platform functions.</title><description>&lt;VulnDiscussion&gt;Most information systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations. Since BlackBerry UEM server is a critical component of the mobility architecture and must be configured to enable only those ports, protocols, and services (PPS) necessary to support functionality, all others must be expressly disabled or removed. A firewall installed on the BlackBerry UEM server provides a protection mechanism to ensure unwanted service requests do not reach the BlackBerry UEM server and outbound traffic is limited to only BlackBerry UEM server functionality.
+
+SFR ID: FMT_SMF.1.1(2) b&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000366</ident><fixtext fixref="F-87871r1_fix">Configure the firewall on the BlackBerry UEM server to only permit ports, protocols, and IP address ranges necessary for operation.</fixtext><fix id="F-87871r1_fix" /><check system="C-80753r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Ask the MDM administrator for a list of ports, protocols, and IP address ranges necessary to support BlackBerry UEM server and platform functionality. A list can usually be found in the STIG Supplemental document or MDM product documentation.
+
+Compare the list against the configuration of the firewall and identify discrepancies.
+
+If the host-based firewall is not configured to support only those ports, protocols, and IP address ranges necessary for operation, this is a finding.</check-content></check></Rule></Group><Group id="V-81073"><title>PP-MDM-331006</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95785r1_rule" severity="medium" weight="10.0"><version>BUEM-12-808900</version><title>The firewall protecting the BlackBerry UEM server platform must be configured so that only DoD-approved ports, protocols, and services are enabled. (See the DoD Ports, Protocols, Services Management [PPSM] Category Assurance Levels [CAL] list for DoD-approved ports, protocols, and services).</title><description>&lt;VulnDiscussion&gt;All ports, protocols, and services used on DoD networks must be approved and registered via the DoD PPSM process. This is to ensure that a risk assessment has been completed before a new port, protocol, or service is configured on a DoD network and has been approved by proper DoD authorities. Otherwise, the new port, protocol, or service could cause a vulnerability to the DoD network, which could be exploited by an adversary.
+
+SFR ID: FMT_SMF.1.1(2) b&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000366</ident><fixtext fixref="F-87873r1_fix">Turn off any ports, protocols, and services on the BlackBerry UEM host-based firewall that are not on the DoD PPSM CAL list.</fixtext><fix id="F-87873r1_fix" /><check system="C-80755r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>Ask the MDM administrator for a list of ports, protocols, and services that have been configured on the host-based firewall of the BlackBerry UEM server or generate the list by inspecting the firewall. Verify all allowed ports, protocols, and services are included on the DoD PPSM CAL list.
+
+If any allowed ports, protocols, and services on the MDM host-based firewall are not included on the DoD PPSM CAL list, this is a finding.</check-content></check></Rule></Group><Group id="V-81075"><title>PP-MDM-302002</title><description>&lt;GroupDescription&gt;&lt;/GroupDescription&gt;</description><Rule id="SV-95787r1_rule" severity="low" weight="10.0"><version>BUEM-12-812150</version><title>The BlackBerry UEM 12.8 Agent and Server must provide an alert via the trusted channel to the MDM server for the following event: required app is not installed on managed mobile device.</title><description>&lt;VulnDiscussion&gt;Audit logs and alerts enable monitoring of security-relevant events and subsequent forensics when breaches occur. They help identify when the security posture of the device is not as expected, including when critical or security-relevant applications have not fully installed on mobile devices under management of the MDM platform. This enables the MDM administrator to take an appropriate remedial action.
+
+SFR ID: FAU_ALT_EXT.2.1&lt;/VulnDiscussion&gt;&lt;FalsePositives&gt;&lt;/FalsePositives&gt;&lt;FalseNegatives&gt;&lt;/FalseNegatives&gt;&lt;Documentable&gt;false&lt;/Documentable&gt;&lt;Mitigations&gt;&lt;/Mitigations&gt;&lt;SeverityOverrideGuidance&gt;&lt;/SeverityOverrideGuidance&gt;&lt;PotentialImpacts&gt;&lt;/PotentialImpacts&gt;&lt;ThirdPartyTools&gt;&lt;/ThirdPartyTools&gt;&lt;MitigationControl&gt;&lt;/MitigationControl&gt;&lt;Responsibility&gt;&lt;/Responsibility&gt;&lt;IAControls&gt;&lt;/IAControls&gt;</description><reference><dc:title>DPMS Target Unified Endpoint Manager (UEM) 12.8</dc:title><dc:publisher>DISA</dc:publisher><dc:type>DPMS Target</dc:type><dc:subject>Unified Endpoint Manager (UEM) 12.8</dc:subject><dc:identifier>3391</dc:identifier></reference><ident system="http://iase.disa.mil/cci">CCI-000169</ident><fixtext fixref="F-87875r1_fix">This requirement is not applicable if the AO has not designated any required applications be installed on site managed mobile devices.
+
+On the UEM console, do the following:
+- Create a compliance email alert to alert if required apps are not installed on managed mobile devices.
+- Set up an event/email notification.
+- Set of a list of apps required to be installed on managed mobile devices.
+- Create an event notification template.
+
+Procedure details:
+- For UEM Hosted Apps we deliver configuration to the device regarding the required applications.
+- The device calls back to UEM to get the application (APP_SEND security audit).
+- The device acknowledges getting the application either successfully or not (APP_DELIVERED security audit).
+
+**Procedure for "Create a compliance email alert to alert if required apps are not installed on managed mobile devices"
+
+The Administrator can create a compliance profile to Alert the user. Additionally, this compliance profile is monitored and an email is sent to the administrator if the device becomes non-compliant. 
+
+1. The administrator accesses UEM &gt;&gt; menu bar, click Policies and Profiles &gt;&gt; Compliance &gt;&gt; Compliance.
+2. Click the "Add" icon and type a name and description for the compliance profile.
+(You can at this stage send a notification message to users when their devices become non-compliant if required.)
+3. In the Email sent when violation is detected drop-down list, select an email template. To see the default compliance email, click Settings &gt;&gt; General settings &gt;&gt; Email templates.
+4. In the Enforcement interval drop-down list, select how often BlackBerry UEM checks for compliance.
+5. Expand Device notification sent out when violation is detected. Edit the message if necessary.
+Note: If you want to use variables (supports default and custom variables) to populate notifications with user, device, and compliance information, you can also define and use your own custom variables using the management console. 
+6. Click the tab for each device type in your organization and configure the appropriate values for each profile setting. 
+7. Click "Add".
+
+**Procedure for "Set up an event/email notification" 
+
+1. Log in to UEM &gt;&gt; menu bar &gt;&gt; Settings &gt;&gt; General settings &gt;&gt; Event notifications.
+2. On "Event notifications" tab, click "Add" icon.
+3. Select event type, click "Next".
+4. Date/time to send email notification drop-down list, select option &gt; Always after an event: Email notifications are when the event occurs &gt; click "Save". 
+5. In Recipients field, select "Add new distribution list", click "Save".
+6. In the Email template drop-down list, select the email template for event notification.
+7. In the Status drop-down list, select "On" to enable event notification.
+8. Click "Preview email", check the email address, and click "Save".
+
+**Procedure for "Set of a list of apps required to be installed on managed mobile devices"
+
+Note: If you are defining rules to restrict or allow specific apps, add those apps to the restricted apps list. 
+1. On the menu bar, click "Apps".
+2. Click "Restricted apps".
+3. Click the "Add" icon and perform the task associated to IOS, Android, and Windows app restricted lists. 
+
+**Procedure for "Create an event notification template"
+
+To restrict built-in apps you must create a compliance profile and add the apps to the restricted app list in the profile.
+
+On the menu bar, click Settings &gt;&gt; General settings.
+1. Click "Email templates".
+2. Click the "Add" icon and select "Event notification".
+3. In the "Name" field, type a name to identify this template.
+4. In the "Subject" field, complete one of the following tasks:
+5. Clear the "Append event type to the email subject" check box and type a subject.
+6. Leave the "Append event type to the email subject" check box selected, and type additional text in the subject field.
+7. Leave the "Append event type to the email subject" check box selected.
+8. In the Message field, type the body text of the event notification email.
+9. Use the HTML editor to select the font format and to insert images (for example, your organization's logo).
+10. To see sample text, click "Suggested text".
+11. Click "Save".</fixtext><fix id="F-87875r1_fix" /><check system="C-80757r1_chk"><check-content-ref name="M" href="DPMS_XCCDF_Benchmark_BB_UEM_12-8_STIG.xml" /><check-content>This requirement is not applicable if the AO has not designated any required applications be installed on site managed mobile devices.
+
+Verify a compliance email alert has been set up on the UEM server to alert if required apps are not installed on managed mobile devices.
+
+- Have the UEM administrator determine the polling interval set up on the console (how often UEM checks compliance for managed mobile devices). (Note: For this review, have the administrator temporarily change the polling interval to 30 minutes or less.)
+- Have the site UEM administrator identify one app required on site managed mobile devices. 
+- Using a site managed mobile device, remove the required app from the mobile device.
+- After the polling interval time has occurred, review the BlackBerry UEM server configuration to determine whether an alert was generated for non-compliance of the test mobile device.
+***On the UEM console, click on the Managed Devices tab
+***Verify a warning message and link is displayed
+***Clink on the link and verify the test managed device and removed app are listed as out of compliance
+
+If a compliance email alert has not been set up on the UEM server to alert if required apps are not installed on managed mobile devices, this is a finding.</check-content></check></Rule></Group></Benchmark>
