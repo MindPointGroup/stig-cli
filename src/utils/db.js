@@ -8,6 +8,7 @@ const {
   getBenchmarkData
 } = require('./')
 const { join } = require('path')
+const { decode } = require('he')
 
 const getXmlArr = async files => {
   debug('getXmlArr start')
@@ -119,9 +120,9 @@ const mkDb = ({ data, dataDir }) => {
               severity,
               title,
               version,
-              description,
-              fixText,
-              checkText,
+              description: decode(description),
+              fixText: decode(fixText),
+              checkText: decode(checkText),
               stigIndex
             })
           }
@@ -152,14 +153,14 @@ const mkDb = ({ data, dataDir }) => {
             severity,
             title,
             version,
-            description,
-            fixText,
-            checkText,
+            description: decode(description),
+            fixText: decode(fixText),
+            checkText: decode(checkText),
             stigIndex
           })
         }
       }
-      const x = db.saveDatabase(async () => {
+      db.saveDatabase(async () => {
         debug('end mkDb')
         resolve({ stigsDb, rulesDb })
       })
