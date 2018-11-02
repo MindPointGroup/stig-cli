@@ -24,7 +24,7 @@ test('Query', async t => {
     t.comment('get benchmark by title')
     const params = {
       dataDir: '/tmp/',
-      title: 'Microsoft OneNote 2013'
+      title: 'Microsoft OneNote 2010 v1 r9'
     }
     const { err, data } = await getBenchmark(params)
     if (err) {
@@ -44,7 +44,7 @@ test('Query', async t => {
   t.test('get all rules for a benchmark', async t => {
     const params = {
       dataDir: '/tmp',
-      benchmarkTitle: 'F5 BIG-IP Advanced Firewall Manager 11.x'
+      benchmarkTitle: 'F5 BIG-IP Advanced Firewall Manager 11.x v1 r1'
     }
     t.comment('get rules by benchmark title')
     const { err, data } = await getRules(params)
