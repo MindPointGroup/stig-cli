@@ -31,11 +31,12 @@
     "node-fetch": "^2.2.0",
     "table": "^5.1.0",
     "unzipper": "^0.9.3",
+    "debug": "^4.1.0",
     "wordwrap": "^1.0.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.18.1",
-    "debug": "^4.1.0",
+    "aws-sdk": "^2.334.0",
     "globby": "^8.0.1",
     "standard": "^12.0.1",
     "tape": "^4.9.1"
@@ -78,8 +79,10 @@
     "ospub": "npm run win-pub && npm run macos-pub",
     "win-pack": "oclif-dev pack:win",
     "macos-pack": "oclif-dev pack:macos",
+    "deb-pack": "oclif-dev pack:deb",
     "win-pub": "oclif-dev publish:win",
     "macos-pub": "oclif-dev publish:macos",
+    "deb-pub": "oclif-dev publish:deb",
     "pack": "oclif-dev pack",
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "prepack": "oclif-dev manifest && oclif-dev readme && npm install --package-lock",
