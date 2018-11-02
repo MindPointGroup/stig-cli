@@ -1,16 +1,12 @@
 version: 2
 jobs:
-  test:
-    macos:
-      xcode: "10.0"
-    working_directory: /Users/distiller/project
+  build:
+    docker:
+      - image: circleci/node:10.11.0-stretch
+    working_directory: ~/project
     environment:
-    steps:
+    steps: &default_steps
       - checkout
-
-      - run:
-          name: Install Homebrew Dependencies
-          command: brew install nodejs --without-icu4c
 
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
@@ -26,10 +22,18 @@ jobs:
 
       - run:
           name: Test
-          run: npm test
+          command: DEBUG=* npm test
+  centos:
+    docker:
+      - image: circleci/node:10.11.0-stretch
+    working_directory: ~/project
+    environment:
+    steps:
+      <<: *default_steps
 
 workflows:
   version: 2
-  build-and-test:
+  build_and_test:
     jobs:
+      - build
       - test
