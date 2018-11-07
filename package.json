@@ -1,7 +1,7 @@
 {
   "name": "stig",
   "description": "A simple command line interface to read and interface with DISA STIG benchmarks",
-  "version": "1.1.0",
+  "version": "0.0.1-beta",
   "author": "Jonathan Davila @defionscode",
   "bin": {
     "stig": "./bin/run"
@@ -74,6 +74,7 @@
   },
   "repository": "defionscode/stig-cli",
   "scripts": {
+    "oclif-dev": "oclif-dev",
     "tape": "tape",
     "ospack": "npm run win-pack && npm run macos-pack",
     "ospub": "npm run win-pub && npm run macos-pub",
